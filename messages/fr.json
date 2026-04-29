@@ -4,12 +4,12 @@
     "tagline": "L'Afrique authentique. Prix imbattables. Direct des artisans."
   },
   "PromoBar": {
-    "shipping": "Livraison gratuite dès 100 €",
+    "shipping": "Livraison gratuite dès 65 000 FCFA",
     "trust": "★ 4,8/5 par 12 000+ acheteurs",
     "direct": "Direct des artisans",
     "countries": "22 pays africains",
     "auth": "100% authentique, commerce équitable",
-    "from": "À partir de 5 €"
+    "from": "À partir de 3 000 FCFA"
   },
   "Nav": {
     "shop": "Boutique",
@@ -43,7 +43,7 @@
     "stat3": "Produits"
   },
   "Trust": {
-    "items": "22 PAYS — 250+ ARTISANS — 100% AUTHENTIQUE — LIVRAISON MONDIALE — DÈS 5 €"
+    "items": "22 PAYS — 250+ ARTISANS — 100% AUTHENTIQUE — LIVRAISON MONDIALE — DÈS 3 000 FCFA"
   },
   "FlashDeals": {
     "title": "Promos Flash",
@@ -152,8 +152,8 @@
     "stockLeft": "Plus que {count}",
     "inStock": "En stock",
     "outOfStock": "Rupture",
-    "savings": "Vous économisez {amount} €",
-    "vsRetail": "Économie de {amount} € vs marché",
+    "savings": "Vous économisez {amount}",
+    "vsRetail": "Économie de {amount} vs marché",
     "tabDescription": "Description",
     "tabCulture": "Contexte culturel",
     "tabMaterials": "Matériaux",

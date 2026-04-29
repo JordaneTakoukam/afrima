@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { Link } from '@/i18n/navigation';
 import { PriceTag } from '@/components/shared/PriceTag';
 import { artisansBySlug } from '@/data/artisans';

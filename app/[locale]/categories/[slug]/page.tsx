@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { ProductCard } from '@/components/product/ProductCard';

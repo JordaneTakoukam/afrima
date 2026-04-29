@@ -118,7 +118,10 @@ export const products: Product[] = [
     ethnicGroup: 'Ashanti',
     category: 'fashion-textiles',
     subcategory: 'Kente & Aso Oke',
-    images: [IMG('photo-1604881744146-d6c7c47a8eb1'), IMG('photo-1547234935-80c7145ec969')],
+    images: [
+      'https://images.pexels.com/photos/6626855/pexels-photo-6626855.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.pexels.com/photos/9533123/pexels-photo-9533123.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    ],
     artisanSlug: 'kofi-asante',
     description: {
       en: '6m hand-woven Kente in the Adwinasa pattern. Royal-grade silk and cotton.',
@@ -902,7 +905,10 @@ export const products: Product[] = [
     ethnicGroup: 'Kuba',
     category: 'home-decor',
     subcategory: 'Furniture',
-    images: [IMG('photo-1580223530509-419eaf088f1f')],
+    images: [
+      'https://images.pexels.com/photos/8089088/pexels-photo-8089088.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.pexels.com/photos/6626855/pexels-photo-6626855.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    ],
     artisanSlug: 'oumar-traore',
     description: {
       en: 'Hand-woven Kuba raffia panel with characteristic geometric embroidery.',

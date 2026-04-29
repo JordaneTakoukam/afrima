@@ -13,7 +13,7 @@ export const categories: Category[] = [
       fr: "Du Toghu royal Bamileke au Kente Ashanti chargé de proverbes, chaque textile ici est bien plus qu'un tissu — c'est un passeport, un poème, un proverbe. Chaque pièce est tissée, teinte ou brodée à la main par des artisans dont les techniques ont été affinées au fil des siècles.",
     },
     cover:
-      'https://images.unsplash.com/photo-1604881744146-d6c7c47a8eb1?w=1600&q=80&auto=format&fit=crop',
+      'https://images.pexels.com/photos/6626855/pexels-photo-6626855.jpeg?auto=compress&cs=tinysrgb&w=1600',
     icon: 'shirt',
     numberLabel: '01',
     subcategories: [
@@ -36,7 +36,7 @@ export const categories: Category[] = [
       fr: 'Sculptures et masques taillés par les descendants des Dogon, Senoufo, Fang. Bronze coulé dans des fonderies à la cire perdue qui n\'ont pas changé depuis 600 ans. Paniers tissés à l\'aube.',
     },
     cover:
-      'https://images.unsplash.com/photo-1547234935-80c7145ec969?w=1600&q=80&auto=format&fit=crop',
+      'https://images.pexels.com/photos/2122293/pexels-photo-2122293.jpeg?auto=compress&cs=tinysrgb&w=1600',
     icon: 'palette',
     numberLabel: '02',
     subcategories: [

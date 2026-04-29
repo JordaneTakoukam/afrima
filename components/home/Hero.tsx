@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, Star } from 'lucide-react';
 import { Link } from '@/i18n/navigation';

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';

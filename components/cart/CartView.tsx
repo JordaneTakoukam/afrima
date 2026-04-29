@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useTranslations } from 'next-intl';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight, Lock } from 'lucide-react';
 import { Link, useRouter } from '@/i18n/navigation';

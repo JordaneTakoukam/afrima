@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight, Quote } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -26,6 +26,9 @@ export function ArtisanSpotlight() {
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover sepia-[0.15] saturate-[1.1] [filter:contrast(1.05)_sepia(0.1)]"
+            fallbackText={artisan.name}
+            fallbackSeed={artisan.slug}
+            fallbackKicker={pickLocale(artisan.craft, locale)}
           />
           <div className="absolute -left-3 top-6 inline-flex items-center bg-clay px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-bone md:-left-6">
             Artisan / 01

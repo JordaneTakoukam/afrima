@@ -36,8 +36,8 @@ export default async function AboutPage({
         <h2 className="font-display text-3xl md:text-5xl">{t('missionTitle')}</h2>
         <p className="mt-6 text-ink/80 leading-relaxed md:text-lg">
           {locale === 'fr'
-            ? "AFRIMA est née d'un constat simple : les artisans africains font des pièces extraordinaires, mais leur part de la valeur finale frôle souvent zéro. Le wax que vous achetez à Paris a fait trois ou quatre intermédiaires. Le karité que vous mettez sur votre peau a quitté la coopérative à 2 € pour finir vendu à 35 €. Nous coupons la chaîne. Direct artisan, marges transparentes, fair-trade non négociable."
-            : "AFRIMA started from a simple observation: African artisans make extraordinary pieces, but their share of the final value is often near zero. The wax fabric you buy in Paris went through three or four middlemen. The shea butter on your skin left the cooperative at €2 to be sold at €35. We cut the chain. Direct from artisan, transparent margins, fair-trade non-negotiable."}
+            ? "AFRIMA est née d'un constat simple : les artisans africains font des pièces extraordinaires, mais leur part de la valeur finale frôle souvent zéro. Le wax que vous achetez à Paris a fait trois ou quatre intermédiaires. Le karité que vous mettez sur votre peau a quitté la coopérative à 1 300 FCFA pour finir vendu à 23 000 FCFA. Nous coupons la chaîne. Direct artisan, marges transparentes, fair-trade non négociable."
+            : "AFRIMA started from a simple observation: African artisans make extraordinary pieces, but their share of the final value is often near zero. The wax fabric you buy in Paris went through three or four middlemen. The shea butter on your skin left the cooperative at 1,300 FCFA to be sold at 23,000 FCFA. We cut the chain. Direct from artisan, transparent margins, fair-trade non-negotiable."}
         </p>
       </section>
 

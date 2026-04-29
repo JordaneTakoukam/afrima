@@ -1,11 +1,17 @@
 'use client';
 
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { Eye, Minus, Plus } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/Sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+  VisuallyHidden,
+} from '@/components/ui/Sheet';
 import { PriceTag } from '@/components/shared/PriceTag';
 import { RatingStars } from '@/components/shared/RatingStars';
 import { ProductBadges } from '@/components/shared/ProductBadges';
@@ -81,6 +87,9 @@ export function QuickView({
         </button>
       </SheetTrigger>
       <SheetContent side="right" className="w-full sm:max-w-md md:max-w-xl overflow-y-auto p-0">
+        <VisuallyHidden>
+          <SheetTitle>{pickLocale(product.name, locale)}</SheetTitle>
+        </VisuallyHidden>
         <div className="relative aspect-[4/3] bg-bone-deep">
           <Image
             src={product.images[0]}
@@ -88,11 +97,13 @@ export function QuickView({
             fill
             sizes="600px"
             className="object-cover"
+            fallbackText={pickLocale(product.name, locale)}
+            fallbackSeed={product.slug}
           />
-          <div className="absolute left-3 top-3 flex flex-wrap gap-1">
+          <div className="absolute left-3 top-3 flex max-w-[60%] flex-wrap gap-1">
             <ProductBadges product={product} locale={locale} max={3} />
           </div>
-          <div className="absolute right-3 top-3">
+          <div className="absolute bottom-3 right-3">
             <WishlistButton slug={product.slug} />
           </div>
         </div>

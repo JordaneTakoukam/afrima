@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fraunces, DM_Sans, JetBrains_Mono } from 'next/font/google';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -36,22 +36,93 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  title: {
-    default: 'AFRIMA — Authentic Africa, delivered.',
-    template: '%s · AFRIMA',
-  },
-  description:
-    'The Pan-African marketplace of authentic culture. 22 countries, 250+ artisans, direct prices.',
-  metadataBase: new URL('https://afrima.demo'),
-  openGraph: {
-    siteName: 'AFRIMA',
-    type: 'website',
-  },
-  icons: {
-    icon: '/favicon.ico',
-  },
+const SITE_URL = 'https://afrima-app.vercel.app';
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FAF7F2' },
+    { media: '(prefers-color-scheme: dark)', color: '#1C1917' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isFr = locale === 'fr';
+
+  const title = isFr
+    ? 'AFRIMA — L’Afrique authentique, livrée'
+    : 'AFRIMA — Authentic Africa, delivered';
+  const description = isFr
+    ? 'Le marché pan-africain de la culture authentique. 22 pays, 250+ artisans, prix direct.'
+    : 'The Pan-African marketplace of authentic culture. 22 countries, 250+ artisans, direct prices.';
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: title,
+      template: '%s · AFRIMA',
+    },
+    description,
+    applicationName: 'AFRIMA',
+    keywords: [
+      'African marketplace',
+      'African crafts',
+      'Toghu',
+      'Kente',
+      'Bogolan',
+      'shea butter',
+      'Berber rug',
+      'African artisans',
+      'pan-African',
+      'fair trade',
+      'marché africain',
+      'artisanat africain',
+    ],
+    authors: [{ name: 'Idriss Jordane', url: 'https://idrissjordane.dev' }],
+    creator: 'Idriss Jordane',
+    publisher: 'AFRIMA',
+    alternates: {
+      canonical: '/',
+      languages: {
+        en: '/',
+        fr: '/fr',
+      },
+    },
+    openGraph: {
+      type: 'website',
+      siteName: 'AFRIMA',
+      title,
+      description,
+      url: SITE_URL,
+      locale: isFr ? 'fr_FR' : 'en_US',
+      images: [
+        {
+          url: '/opengraph-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'AFRIMA — ' + title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      creator: '@idrissjordane',
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    category: 'shopping',
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -74,6 +145,12 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <CartProvider>
             <WishlistProvider>
+              <a
+                href="#main"
+                className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-3 focus:py-2 focus:text-bone"
+              >
+                Skip to content
+              </a>
               <TopPromoBar />
               <Header />
               <main id="main" className="min-h-[60vh]">

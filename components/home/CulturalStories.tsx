@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -40,6 +40,9 @@ export function CulturalStories() {
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
+                fallbackText={pickLocale(s.title, locale)}
+                fallbackSeed={s.slug}
+                fallbackKicker={pickLocale(s.category, locale)}
               />
             </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-clay">

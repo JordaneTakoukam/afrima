@@ -128,7 +128,7 @@ export const countries: Country[] = [
     },
     productCount: 22,
     heroImage:
-      'https://images.unsplash.com/photo-1580223530509-419eaf088f1f?w=1200&q=80&auto=format&fit=crop',
+      'https://images.pexels.com/photos/8089088/pexels-photo-8089088.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     slug: 'congo',

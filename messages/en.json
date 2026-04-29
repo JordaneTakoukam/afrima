@@ -4,12 +4,12 @@
     "tagline": "Authentic Africa. Unbeatable prices. Direct from artisans."
   },
   "PromoBar": {
-    "shipping": "Free shipping over €100",
+    "shipping": "Free shipping over 65,000 FCFA",
     "trust": "★ 4.8/5 from 12,000+ buyers",
     "direct": "Direct from artisans",
     "countries": "From 22 African countries",
     "auth": "100% authentic, fair-trade",
-    "from": "From €5"
+    "from": "From 3,000 FCFA"
   },
   "Nav": {
     "shop": "Shop",
@@ -43,7 +43,7 @@
     "stat3": "Products"
   },
   "Trust": {
-    "items": "22 COUNTRIES — 250+ ARTISANS — 100% AUTHENTIC — WORLDWIDE SHIPPING — FROM €5"
+    "items": "22 COUNTRIES — 250+ ARTISANS — 100% AUTHENTIC — WORLDWIDE SHIPPING — FROM 3,000 FCFA"
   },
   "FlashDeals": {
     "title": "Flash Deals",
@@ -152,8 +152,8 @@
     "stockLeft": "Only {count} left",
     "inStock": "In stock",
     "outOfStock": "Out of stock",
-    "savings": "You save €{amount}",
-    "vsRetail": "Saving €{amount} vs retail",
+    "savings": "You save {amount}",
+    "vsRetail": "Saving {amount} vs retail",
     "tabDescription": "Description",
     "tabCulture": "Cultural context",
     "tabMaterials": "Materials",

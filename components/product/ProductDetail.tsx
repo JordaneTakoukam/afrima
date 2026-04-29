@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Truck, ShieldCheck, Hand, Award, Minus, Plus, Share2 } from 'lucide-react';
@@ -16,7 +16,7 @@ import { WishlistButton } from '@/components/product/WishlistButton';
 import { artisansBySlug } from '@/data/artisans';
 import { countriesBySlug } from '@/data/countries';
 import { getReviewsForProduct } from '@/data/reviews';
-import { discountPercent, pickLocale } from '@/lib/utils';
+import { discountPercent, formatPrice, pickLocale } from '@/lib/utils';
 import type { Locale, Product } from '@/lib/types';
 
 export function ProductDetail({ product, locale }: { product: Product; locale: Locale }) {
@@ -45,14 +45,14 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
         {/* Gallery */}
-        <div className="lg:col-span-7 grid grid-cols-[80px_1fr] gap-3">
-          <div className="flex flex-col gap-2">
+        <div className="lg:col-span-7 flex flex-col-reverse gap-3 md:grid md:grid-cols-[80px_1fr]">
+          <div className="flex flex-row gap-2 overflow-x-auto md:flex-col scrollbar-hide">
             {product.images.map((src, i) => (
               <button
                 key={src}
                 type="button"
                 onClick={() => setActiveImage(i)}
-                className={`relative aspect-square w-20 overflow-hidden border-2 ${
+                className={`relative aspect-square w-16 shrink-0 overflow-hidden border-2 md:w-20 ${
                   activeImage === i ? 'border-ink' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
               >
@@ -74,6 +74,9 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
               sizes="(max-width: 1024px) 100vw, 60vw"
               priority
               className="object-cover"
+              fallbackText={pickLocale(product.name, locale)}
+              fallbackSeed={product.slug}
+              fallbackKicker="Image"
             />
             {off ? (
               <div className="absolute left-3 top-3 rounded-sm bg-clay px-2 py-1 font-mono text-xs font-bold uppercase tracking-wider text-bone">
@@ -126,7 +129,7 @@ export function ProductDetail({ product, locale }: { product: Product; locale: L
           </div>
           {savings > 0 ? (
             <div className="mt-2 font-mono text-xs uppercase tracking-wider text-leaf" data-num>
-              {t('savings', { amount: savings })}
+              {t('savings', { amount: formatPrice(savings, locale) })}
             </div>
           ) : null}
 

@@ -3,7 +3,15 @@
 import { Menu } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/Sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+  SheetTitle,
+  VisuallyHidden,
+} from '@/components/ui/Sheet';
+import { Logo } from '@/components/shared/Logo';
 import { categories } from '@/data/categories';
 import { countries } from '@/data/countries';
 import { pickLocale } from '@/lib/utils';
@@ -25,8 +33,14 @@ export function MobileMenu() {
           <Menu className="h-5 w-5" />
         </button>
       </SheetTrigger>
-      <SheetContent side="left" className="overflow-y-auto">
-        <div className="font-display text-2xl italic">AFRIMA</div>
+      <SheetContent side="left" className="overflow-y-auto p-6">
+        <VisuallyHidden>
+          <SheetTitle>{t('menu')}</SheetTitle>
+        </VisuallyHidden>
+        <div className="flex items-center gap-2">
+          <Logo size={26} />
+          <span className="font-display text-2xl italic">AFRIMA</span>
+        </div>
 
         <div className="mt-6 space-y-6">
           <div>

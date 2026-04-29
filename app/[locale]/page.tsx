@@ -10,6 +10,7 @@ import { CulturalStories } from '@/components/home/CulturalStories';
 import { NewArrivals } from '@/components/home/NewArrivals';
 import { ValueProps } from '@/components/home/ValueProps';
 import { Newsletter } from '@/components/home/Newsletter';
+import { Reveal } from '@/components/shared/Reveal';
 
 export default async function HomePage({
   params,
@@ -23,15 +24,33 @@ export default async function HomePage({
     <>
       <Hero />
       <TrustStrip />
-      <FlashDeals />
-      <BestsellersGrid />
-      <CategoriesShowcase />
-      <TrendingByCountry />
-      <ArtisanSpotlight />
-      <CulturalStories />
-      <NewArrivals />
-      <ValueProps />
-      <Newsletter />
+      <Reveal>
+        <FlashDeals />
+      </Reveal>
+      <Reveal>
+        <BestsellersGrid />
+      </Reveal>
+      <Reveal>
+        <CategoriesShowcase />
+      </Reveal>
+      <Reveal>
+        <TrendingByCountry />
+      </Reveal>
+      <Reveal>
+        <ArtisanSpotlight />
+      </Reveal>
+      <Reveal>
+        <CulturalStories />
+      </Reveal>
+      <Reveal>
+        <NewArrivals />
+      </Reveal>
+      <Reveal>
+        <ValueProps />
+      </Reveal>
+      <Reveal>
+        <Newsletter />
+      </Reveal>
     </>
   );
 }

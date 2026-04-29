@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -77,6 +77,9 @@ function CategoryCard({
         fill
         sizes={big ? '(max-width: 1024px) 100vw, 60vw' : '(max-width: 1024px) 50vw, 30vw'}
         className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+        fallbackText={pickLocale(category.name, locale)}
+        fallbackSeed={category.slug}
+        fallbackKicker={category.numberLabel}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
       <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-3 text-bone md:inset-x-7 md:bottom-7">

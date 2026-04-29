@@ -112,7 +112,7 @@ Le Kente est devenu, accidentellement, un symbole pan-africain global. Les dipl�
 Nous travaillons avec les tisserands de Bonwire, le village où tout a commencé.`,
     },
     cover:
-      'https://images.unsplash.com/photo-1604881744146-d6c7c47a8eb1?w=1600&q=80&auto=format&fit=crop',
+      'https://images.pexels.com/photos/9533123/pexels-photo-9533123.jpeg?auto=compress&cs=tinysrgb&w=1600',
     category: { en: 'Heritage', fr: 'Patrimoine' },
     readTime: 7,
     publishedAt: '2026-04-05',

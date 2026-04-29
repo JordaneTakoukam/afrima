@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SafeImage as Image } from '@/components/shared/SafeImage';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { PriceTag } from '@/components/shared/PriceTag';
@@ -39,6 +39,8 @@ export function ProductCard({
             sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
             priority={priority}
             className="object-cover transition-transform duration-700 group-hover:scale-105"
+            fallbackText={pickLocale(product.name, locale)}
+            fallbackSeed={product.slug}
           />
           <div className="absolute left-2 top-2 flex flex-col gap-1">
             <ProductBadges product={product} locale={locale} max={2} />
