@@ -1,0 +1,278 @@
+{
+  "Brand": {
+    "name": "AFRIMA",
+    "tagline": "L'Afrique authentique. Prix imbattables. Direct des artisans."
+  },
+  "PromoBar": {
+    "shipping": "Livraison gratuite dès 100 €",
+    "trust": "★ 4,8/5 par 12 000+ acheteurs",
+    "direct": "Direct des artisans",
+    "countries": "22 pays africains",
+    "auth": "100% authentique, commerce équitable",
+    "from": "À partir de 5 €"
+  },
+  "Nav": {
+    "shop": "Boutique",
+    "categories": "Catégories",
+    "countries": "Pays",
+    "artisans": "Artisans",
+    "stories": "Histoires",
+    "deals": "Promos",
+    "about": "À propos",
+    "search": "Chercher produits, pays, artisans…",
+    "wishlist": "Favoris",
+    "cart": "Panier",
+    "menu": "Menu",
+    "home": "Accueil",
+    "profile": "Profil",
+    "viewAll": "Tout voir",
+    "featured": "À la une",
+    "new": "Nouveautés",
+    "bestsellers": "Best-sellers"
+  },
+  "Hero": {
+    "kicker": "Marché pan-africain",
+    "line1": "L'Afrique",
+    "line2": "authentique,",
+    "line3": "livrée.",
+    "subtitle": "22 pays. 250+ artisans. Prix direct. Livraison mondiale.",
+    "ctaShop": "Découvrir",
+    "ctaArtisans": "Voir les artisans",
+    "stat1": "Pays",
+    "stat2": "Artisans",
+    "stat3": "Produits"
+  },
+  "Trust": {
+    "items": "22 PAYS — 250+ ARTISANS — 100% AUTHENTIQUE — LIVRAISON MONDIALE — DÈS 5 €"
+  },
+  "FlashDeals": {
+    "title": "Promos Flash",
+    "subtitle": "Fin aujourd'hui. Vraies promos d'artisans.",
+    "endsIn": "Fin dans",
+    "viewAll": "Voir toutes les promos",
+    "off": "DE RÉDUC",
+    "stockLeft": "Plus que {count}",
+    "soldToday": "{count} vendus aujourd'hui"
+  },
+  "CountryGrid": {
+    "title": "Par pays",
+    "subtitle": "22 nations, l'artisanat à l'infini. Du Sahara au Cap.",
+    "products": "{count} produits",
+    "signature": "Signature : {name}"
+  },
+  "Bestsellers": {
+    "title": "Best-sellers de la semaine",
+    "subtitle": "Ce que tout le monde adore en ce moment."
+  },
+  "CategoriesShowcase": {
+    "title": "Explorer l'âme",
+    "subtitle": "Sept catégories. Un continent."
+  },
+  "Trending": {
+    "title": "En tendance sur le continent",
+    "subtitle": "Choisis un pays, découvre ses étoiles montantes."
+  },
+  "Artisan": {
+    "kicker": "Rencontrez",
+    "ctaProfile": "Découvrir ses créations",
+    "ctaProfileM": "Découvrir ses créations",
+    "yearsExp": "{count} ans de maîtrise",
+    "title": "Les mains derrière l'artisanat"
+  },
+  "Stories": {
+    "title": "Histoires du continent",
+    "subtitle": "Derrière chaque tissu, chaque masque, chaque épice — une histoire.",
+    "readStory": "Lire l'histoire",
+    "readTime": "{minutes} min de lecture"
+  },
+  "NewArrivals": {
+    "title": "Tout juste arrivé",
+    "subtitle": "Frais des ateliers d'artisans cette semaine."
+  },
+  "ValueProps": {
+    "p1Title": "22 pays",
+    "p1Body": "Sourcé directement à travers le continent.",
+    "p2Title": "Fait main, toujours",
+    "p2Body": "Par des artisans, pas des usines.",
+    "p3Title": "100% authentique",
+    "p3Body": "Commerce équitable, prix transparents.",
+    "p4Title": "Livraison mondiale",
+    "p4Body": "Suivi, assuré, rapide."
+  },
+  "Newsletter": {
+    "kicker": "L'âme hebdo",
+    "title": "L'âme de l'Afrique, chaque semaine",
+    "subtitle": "Nouveautés, histoires d'artisans, plongées culturelles. Jamais de spam.",
+    "placeholder": "Votre email",
+    "subscribe": "S'abonner",
+    "success": "Vous y êtes. Bienvenue dans la famille."
+  },
+  "Footer": {
+    "tagline": "Le marché pan-africain de la culture authentique.",
+    "shop": "Boutique",
+    "discover": "Découvrir",
+    "help": "Aide",
+    "legal": "Légal",
+    "categories": "Catégories",
+    "countries": "Pays",
+    "deals": "Promos",
+    "newArrivals": "Nouveautés",
+    "artisans": "Artisans",
+    "stories": "Histoires",
+    "about": "À propos",
+    "sustainability": "Durabilité",
+    "faq": "FAQ",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "contact": "Contact",
+    "terms": "CGV",
+    "privacy": "Confidentialité",
+    "cookies": "Cookies",
+    "rights": "© 2026 AFRIMA. Tous droits réservés.",
+    "demo": "Projet démo — aucune transaction réelle."
+  },
+  "Product": {
+    "addToCart": "Ajouter au panier",
+    "addedToCart": "Ajouté au panier",
+    "quickView": "Aperçu rapide",
+    "wishlist": "Ajouter aux favoris",
+    "wishlistAdded": "Sauvegardé dans les favoris",
+    "rating": "{rating} · {count} avis",
+    "soldCount": "{count} vendus",
+    "viewing": "{count} personnes regardent",
+    "boughtToday": "Acheté {count} fois aujourd'hui",
+    "freeShipping": "Livraison gratuite",
+    "madeIn": "Fabriqué au {country}",
+    "handMade": "Fait main",
+    "fairTrade": "Commerce équitable",
+    "limitedEdition": "Édition limitée",
+    "authentic": "Authentique",
+    "bestseller": "Best-seller",
+    "newArrival": "Nouveau",
+    "stockLeft": "Plus que {count}",
+    "inStock": "En stock",
+    "outOfStock": "Rupture",
+    "savings": "Vous économisez {amount} €",
+    "vsRetail": "Économie de {amount} € vs marché",
+    "tabDescription": "Description",
+    "tabCulture": "Contexte culturel",
+    "tabMaterials": "Matériaux",
+    "tabReviews": "Avis",
+    "materials": "Matériaux",
+    "dimensions": "Dimensions",
+    "shipsFrom": "Expédié depuis {country}",
+    "deliveryTime": "Livraison en 5–10 jours",
+    "secureCheckout": "Paiement sécurisé",
+    "relatedTitle": "Vous aimerez aussi",
+    "recentlyViewed": "Vus récemment",
+    "byArtisan": "Réalisé par",
+    "verifiedReview": "Acheteur vérifié",
+    "writeReview": "Écrire un avis",
+    "quantity": "Quantité",
+    "share": "Partager",
+    "country": "Pays",
+    "ethnicGroup": "Groupe ethnique",
+    "usage": "Usage"
+  },
+  "Country": {
+    "shopByRegion": "Par région",
+    "ethnicGroups": "Groupes ethniques",
+    "categories": "Catégories",
+    "history": "Histoire & culture",
+    "featuredArtisans": "Artisans à l'honneur",
+    "regions": "{count} régions",
+    "products": "{count} produits",
+    "explore": "Explorer {name}"
+  },
+  "Category": {
+    "filters": "Filtres",
+    "clearAll": "Tout effacer",
+    "country": "Pays",
+    "ethnicGroup": "Groupe ethnique",
+    "priceRange": "Fourchette de prix",
+    "labels": "Labels",
+    "usage": "Usage",
+    "sort": "Trier",
+    "sortFeatured": "À la une",
+    "sortNewest": "Nouveautés",
+    "sortPriceAsc": "Prix : croissant",
+    "sortPriceDesc": "Prix : décroissant",
+    "sortBestseller": "Best-seller",
+    "sortRating": "Mieux notés",
+    "loadMore": "Voir plus",
+    "results": "{count} produits",
+    "noResults": "Aucun produit ne correspond à vos filtres."
+  },
+  "Cart": {
+    "title": "Votre panier",
+    "empty": "Votre panier est vide.",
+    "emptyCta": "Commencer mes achats",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "total": "Total",
+    "promo": "Code promo",
+    "apply": "Appliquer",
+    "checkout": "Commander",
+    "checkoutDemo": "Démo — paiement désactivé.",
+    "remove": "Retirer",
+    "qty": "Qté",
+    "items": "{count, plural, =0 {aucun article} =1 {1 article} other {# articles}}"
+  },
+  "Wishlist": {
+    "title": "Vos favoris",
+    "empty": "Aucun favori pour le moment.",
+    "emptyCta": "Découvrir les produits",
+    "moveToCart": "Au panier",
+    "remove": "Retirer"
+  },
+  "Search": {
+    "title": "Recherche",
+    "placeholder": "Chercher produits, pays, artisans…",
+    "results": "{count} résultats pour « {query} »",
+    "noResults": "Rien ne correspond à « {query} ». Essayez un autre mot.",
+    "trendingSearches": "Recherches populaires",
+    "clear": "Effacer"
+  },
+  "About": {
+    "title": "Pourquoi AFRIMA",
+    "kicker": "Notre histoire",
+    "subtitle": "Mettre les artisans africains sur la carte du monde — à un prix juste, avec leur nom.",
+    "missionTitle": "La mission",
+    "valuesTitle": "Nos valeurs",
+    "teamTitle": "L'équipe",
+    "value1": "Authenticité plutôt qu'imitation",
+    "value1Body": "Chaque pièce est sourcée directement chez l'artisan. Pas d'usine, pas de copie.",
+    "value2": "Rémunération juste, prix transparent",
+    "value2Body": "Les artisans fixent leur marge. Nous publions la nôtre.",
+    "value3": "Respect culturel",
+    "value3Body": "Les histoires racontées par ceux qui les portent, pas par nous.",
+    "value4": "Pan-africain par essence",
+    "value4Body": "De l'Atlas au Cap, les 54 nations bienvenues."
+  },
+  "Culture": {
+    "title": "Culture & Histoires",
+    "subtitle": "Plongées longues dans les tissus, masques, épices et rituels qui font le continent.",
+    "readArticle": "Lire l'article",
+    "relatedStories": "Histoires liées",
+    "publishedOn": "Publié le {date}"
+  },
+  "Filters": {
+    "all": "Tous",
+    "any": "Tout",
+    "from": "De",
+    "to": "À"
+  },
+  "Common": {
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "view": "Voir",
+    "more": "Plus",
+    "less": "Moins",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "loading": "Chargement…"
+  }
+}

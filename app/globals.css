@@ -1,26 +1,172 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Editorial palette */
+  --color-bone: #faf7f2;
+  --color-bone-deep: #f1ebe0;
+  --color-ink: #1c1917;
+  --color-ink-soft: #2b2724;
+  --color-earth: #78350f;
+
+  /* Commercial accents */
+  --color-clay: #c2410c;
+  --color-clay-deep: #9a3412;
+  --color-ochre: #d97706;
+  --color-ochre-soft: #fbbf24;
+  --color-gold: #eab308;
+  --color-leaf: #166534;
+  --color-berry: #9f1239;
+  --color-berry-deep: #7f1d1d;
+
+  /* Map to semantic shadcn-ish names */
+  --color-background: #faf7f2;
+  --color-foreground: #1c1917;
+  --color-muted: #efe9dc;
+  --color-muted-foreground: #5b5450;
+  --color-border: #e7ddc9;
+  --color-ring: #c2410c;
+
+  /* Fonts (filled by next/font in layout via CSS vars) */
+  --font-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  --font-sans: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Radii */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light;
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  * {
+    border-color: #e7ddc9;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background: #faf7f2;
+    color: #1c1917;
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  ::selection {
+    background: #1c1917;
+    color: #faf7f2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono,
+  [data-num] {
+    font-feature-settings: 'tnum' 1, 'cv11' 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .bg-grain {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.1  0 0 0 0 0.1  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/></svg>");
+    background-size: 220px 220px;
+  }
+
+  .bg-adinkra {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%231c1917' stroke-width='1.2' opacity='0.6'><circle cx='80' cy='80' r='30'/><circle cx='80' cy='80' r='50'/><path d='M80 30 v100 M30 80 h100 M44 44 l72 72 M44 116 l72 -72'/><circle cx='80' cy='80' r='6' fill='%231c1917'/></g></svg>");
+    background-size: 160px 160px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+
+  .marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 1.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.5;
+    }
+  }
+
+  .editorial-shadow {
+    box-shadow:
+      0 1px 0 rgba(28, 25, 23, 0.04),
+      0 24px 60px -32px rgba(28, 25, 23, 0.25);
+  }
+
+  .ink-border {
+    border: 2px solid #1c1917;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid #1c1917;
+    outline-offset: 2px;
+  }
+
+  .snap-row {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-row > * {
+    scroll-snap-align: start;
+  }
+
+  .ticker-tick {
+    animation: ticker-tick 1s steps(1, end) infinite;
+  }
+  @keyframes ticker-tick {
+    50% {
+      opacity: 0.3;
+    }
+  }
 }

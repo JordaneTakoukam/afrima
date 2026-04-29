@@ -1,0 +1,113 @@
+import type { Review } from '@/lib/types';
+
+export const reviews: Review[] = [
+  {
+    productSlug: 'royal-toghu-dress',
+    author: 'Mireille K.',
+    authorCountry: 'France',
+    rating: 5,
+    date: '2026-04-21',
+    comment: {
+      en: 'Wore it to my sister\'s wedding in Douala. Three aunties asked where it was made. The embroidery is unreal.',
+      fr: 'Porté au mariage de ma sœur à Douala. Trois tantines m\'ont demandé d\'où il venait. La broderie est dingue.',
+    },
+    verified: true,
+  },
+  {
+    productSlug: 'royal-toghu-dress',
+    author: 'Patrick D.',
+    authorCountry: 'Belgium',
+    rating: 5,
+    date: '2026-04-12',
+    comment: { en: 'Heavy, dense, beautifully finished. A real Toghu.', fr: 'Lourd, dense, parfaitement fini. Un vrai Toghu.' },
+    verified: true,
+  },
+  {
+    productSlug: 'raw-shea-butter',
+    author: 'Sandra T.',
+    authorCountry: 'UK',
+    rating: 5,
+    date: '2026-04-25',
+    comment: {
+      en: 'I\'ve tried every shea butter on the market. This one is the real, raw, smelly stuff. Skin is happier.',
+      fr: 'J\'ai testé tous les karités du marché. Celui-ci est le vrai, brut, qui sent fort. Ma peau apprécie.',
+    },
+    verified: true,
+  },
+  {
+    productSlug: 'raw-shea-butter',
+    author: 'Aïssatou D.',
+    authorCountry: 'Senegal',
+    rating: 4,
+    date: '2026-04-19',
+    comment: { en: 'Quality is excellent. Texture a bit hard in winter, but melts on the skin.', fr: 'Qualité excellente. Texture un peu dure en hiver mais fond sur la peau.' },
+    verified: true,
+  },
+  {
+    productSlug: 'royal-kente-cloth',
+    author: 'Kwame O.',
+    authorCountry: 'Ghana',
+    rating: 5,
+    date: '2026-04-18',
+    comment: { en: 'Adwinasa pattern. Real silk. My grandmother approved.', fr: "Motif Adwinasa. Vraie soie. Ma grand-mère a validé." },
+    verified: true,
+  },
+  {
+    productSlug: 'lenke-wood-djembe',
+    author: 'Hugo M.',
+    authorCountry: 'France',
+    rating: 5,
+    date: '2026-04-22',
+    comment: { en: 'I play professionally. The bass is wide, the slap is sharp. Real Lenké, no doubt.', fr: 'Je joue en pro. Bass large, slap sec. Vrai Lenké, aucun doute.' },
+    verified: true,
+  },
+  {
+    productSlug: 'berber-atlas-carpet',
+    author: 'Anna B.',
+    authorCountry: 'Germany',
+    rating: 5,
+    date: '2026-04-17',
+    comment: { en: 'Bigger than expected. The wool is alive. Living room transformed.', fr: 'Plus grand que prévu. La laine est vivante. Salon transformé.' },
+    verified: true,
+  },
+  {
+    productSlug: 'maasai-beaded-collar',
+    author: 'Nadia E.',
+    authorCountry: 'Morocco',
+    rating: 5,
+    date: '2026-04-15',
+    comment: { en: 'Worn twice already. Compliments every time.', fr: 'Déjà porté deux fois. Compliments à chaque fois.' },
+    verified: true,
+  },
+  {
+    productSlug: 'tuareg-silver-cross',
+    author: 'Jean-Pierre L.',
+    authorCountry: 'Canada',
+    rating: 5,
+    date: '2026-04-10',
+    comment: { en: 'Heavy, real silver, real soul. The cord is solid leather. Buy.', fr: 'Lourd, vraie argent, vraie âme. Le cordon est en cuir solide. Achetez.' },
+    verified: true,
+  },
+  {
+    productSlug: 'ethiopian-coffee-set',
+    author: 'Yana K.',
+    authorCountry: 'Spain',
+    rating: 5,
+    date: '2026-04-08',
+    comment: { en: 'The jebena is gorgeous. Yirgacheffe beans were a revelation. Coffee, properly.', fr: 'La jebena est superbe. Le Yirgacheffe, une révélation. Le vrai café.' },
+    verified: true,
+  },
+  {
+    productSlug: 'argan-oil-100ml',
+    author: 'Léa M.',
+    authorCountry: 'France',
+    rating: 5,
+    date: '2026-04-26',
+    comment: { en: 'Three drops in my hair, done. Nothing like the supermarket stuff.', fr: 'Trois gouttes dans les cheveux, terminé. Rien à voir avec celui du supermarché.' },
+    verified: true,
+  },
+];
+
+export function getReviewsForProduct(slug: string) {
+  return reviews.filter((r) => r.productSlug === slug);
+}

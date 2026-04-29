@@ -1,0 +1,278 @@
+{
+  "Brand": {
+    "name": "AFRIMA",
+    "tagline": "Authentic Africa. Unbeatable prices. Direct from artisans."
+  },
+  "PromoBar": {
+    "shipping": "Free shipping over €100",
+    "trust": "★ 4.8/5 from 12,000+ buyers",
+    "direct": "Direct from artisans",
+    "countries": "From 22 African countries",
+    "auth": "100% authentic, fair-trade",
+    "from": "From €5"
+  },
+  "Nav": {
+    "shop": "Shop",
+    "categories": "Categories",
+    "countries": "Countries",
+    "artisans": "Artisans",
+    "stories": "Stories",
+    "deals": "Deals",
+    "about": "About",
+    "search": "Search products, countries, artisans…",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "menu": "Menu",
+    "home": "Home",
+    "profile": "Profile",
+    "viewAll": "View all",
+    "featured": "Featured",
+    "new": "New arrivals",
+    "bestsellers": "Bestsellers"
+  },
+  "Hero": {
+    "kicker": "Pan-African marketplace",
+    "line1": "Authentic",
+    "line2": "Africa,",
+    "line3": "delivered.",
+    "subtitle": "From 22 countries. 250+ artisans. Direct prices. Worldwide shipping.",
+    "ctaShop": "Shop Now",
+    "ctaArtisans": "Meet Artisans",
+    "stat1": "Countries",
+    "stat2": "Artisans",
+    "stat3": "Products"
+  },
+  "Trust": {
+    "items": "22 COUNTRIES — 250+ ARTISANS — 100% AUTHENTIC — WORLDWIDE SHIPPING — FROM €5"
+  },
+  "FlashDeals": {
+    "title": "Flash Deals",
+    "subtitle": "Ends today. Real artisan deals.",
+    "endsIn": "Ends in",
+    "viewAll": "See all deals",
+    "off": "OFF",
+    "stockLeft": "Only {count} left",
+    "soldToday": "Sold {count} today"
+  },
+  "CountryGrid": {
+    "title": "Shop by country",
+    "subtitle": "22 nations, infinite craft. From the Sahara to the Cape.",
+    "products": "{count} products",
+    "signature": "Signature: {name}"
+  },
+  "Bestsellers": {
+    "title": "Bestsellers this week",
+    "subtitle": "What everyone's loving right now."
+  },
+  "CategoriesShowcase": {
+    "title": "Explore the soul",
+    "subtitle": "Seven categories. One continent."
+  },
+  "Trending": {
+    "title": "Trending across the continent",
+    "subtitle": "Tap a country, discover its rising stars."
+  },
+  "Artisan": {
+    "kicker": "Meet",
+    "ctaProfile": "Discover her creations",
+    "ctaProfileM": "Discover his creations",
+    "yearsExp": "{count} years of mastery",
+    "title": "The hands behind the craft"
+  },
+  "Stories": {
+    "title": "Stories from the continent",
+    "subtitle": "Behind every textile, every mask, every spice — a story.",
+    "readStory": "Read story",
+    "readTime": "{minutes} min read"
+  },
+  "NewArrivals": {
+    "title": "Just landed",
+    "subtitle": "Fresh from artisan workshops this week."
+  },
+  "ValueProps": {
+    "p1Title": "From 22 countries",
+    "p1Body": "Sourced directly across the continent.",
+    "p2Title": "Hand-made, always",
+    "p2Body": "By artisans, not factories.",
+    "p3Title": "100% authentic",
+    "p3Body": "Fair-trade, transparently priced.",
+    "p4Title": "Worldwide shipping",
+    "p4Body": "Tracked, insured, fast."
+  },
+  "Newsletter": {
+    "kicker": "Weekly soul",
+    "title": "The soul of Africa, weekly",
+    "subtitle": "New arrivals, artisan stories, and culture deep-dives. No spam, ever.",
+    "placeholder": "Your email",
+    "subscribe": "Subscribe",
+    "success": "You're in. Welcome to the family."
+  },
+  "Footer": {
+    "tagline": "The pan-African marketplace of authentic culture.",
+    "shop": "Shop",
+    "discover": "Discover",
+    "help": "Help",
+    "legal": "Legal",
+    "categories": "Categories",
+    "countries": "Countries",
+    "deals": "Deals",
+    "newArrivals": "New",
+    "artisans": "Artisans",
+    "stories": "Stories",
+    "about": "About",
+    "sustainability": "Sustainability",
+    "faq": "FAQ",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "rights": "© 2026 AFRIMA. All rights reserved.",
+    "demo": "Demo project — no real transactions."
+  },
+  "Product": {
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to cart",
+    "quickView": "Quick view",
+    "wishlist": "Add to wishlist",
+    "wishlistAdded": "Saved to wishlist",
+    "rating": "{rating} · {count} reviews",
+    "soldCount": "{count} sold",
+    "viewing": "{count} people viewing now",
+    "boughtToday": "Bought {count} times today",
+    "freeShipping": "Free shipping",
+    "madeIn": "Made in {country}",
+    "handMade": "Hand-made",
+    "fairTrade": "Fair-trade",
+    "limitedEdition": "Limited edition",
+    "authentic": "Authentic",
+    "bestseller": "Bestseller",
+    "newArrival": "New",
+    "stockLeft": "Only {count} left",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "savings": "You save €{amount}",
+    "vsRetail": "Saving €{amount} vs retail",
+    "tabDescription": "Description",
+    "tabCulture": "Cultural context",
+    "tabMaterials": "Materials",
+    "tabReviews": "Reviews",
+    "materials": "Materials",
+    "dimensions": "Dimensions",
+    "shipsFrom": "Ships from {country}",
+    "deliveryTime": "Delivery in 5–10 days",
+    "secureCheckout": "Secure checkout",
+    "relatedTitle": "You might also love",
+    "recentlyViewed": "Recently viewed",
+    "byArtisan": "Crafted by",
+    "verifiedReview": "Verified buyer",
+    "writeReview": "Write a review",
+    "quantity": "Quantity",
+    "share": "Share",
+    "country": "Country",
+    "ethnicGroup": "Ethnic group",
+    "usage": "Usage"
+  },
+  "Country": {
+    "shopByRegion": "Shop by region",
+    "ethnicGroups": "Ethnic groups",
+    "categories": "Categories",
+    "history": "History & culture",
+    "featuredArtisans": "Featured artisans",
+    "regions": "{count} regions",
+    "products": "{count} products",
+    "explore": "Explore {name}"
+  },
+  "Category": {
+    "filters": "Filters",
+    "clearAll": "Clear all",
+    "country": "Country",
+    "ethnicGroup": "Ethnic group",
+    "priceRange": "Price range",
+    "labels": "Labels",
+    "usage": "Usage",
+    "sort": "Sort by",
+    "sortFeatured": "Featured",
+    "sortNewest": "Newest",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortBestseller": "Bestseller",
+    "sortRating": "Top rated",
+    "loadMore": "Load more",
+    "results": "{count} products",
+    "noResults": "No products match your filters."
+  },
+  "Cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "emptyCta": "Start shopping",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "promo": "Promo code",
+    "apply": "Apply",
+    "checkout": "Checkout",
+    "checkoutDemo": "Demo only — checkout disabled.",
+    "remove": "Remove",
+    "qty": "Qty",
+    "items": "{count, plural, =0 {no items} =1 {1 item} other {# items}}"
+  },
+  "Wishlist": {
+    "title": "Your wishlist",
+    "empty": "No favorites yet.",
+    "emptyCta": "Discover products",
+    "moveToCart": "Move to cart",
+    "remove": "Remove"
+  },
+  "Search": {
+    "title": "Search",
+    "placeholder": "Search for products, countries, artisans…",
+    "results": "{count} results for \"{query}\"",
+    "noResults": "Nothing matches \"{query}\". Try a different word.",
+    "trendingSearches": "Trending searches",
+    "clear": "Clear search"
+  },
+  "About": {
+    "title": "Why AFRIMA",
+    "kicker": "Our story",
+    "subtitle": "We exist to put African artisans on the world map — at fair prices, with full credit.",
+    "missionTitle": "The mission",
+    "valuesTitle": "What we stand for",
+    "teamTitle": "The team",
+    "value1": "Authenticity over imitation",
+    "value1Body": "Every piece is sourced directly from the artisan. No factories, no fakes.",
+    "value2": "Fair pay, transparent pricing",
+    "value2Body": "Artisans set their margin. We disclose ours.",
+    "value3": "Cultural respect",
+    "value3Body": "Stories told by the people who own them, not by us.",
+    "value4": "Pan-African by design",
+    "value4Body": "From the Atlas to the Cape, all 54 nations welcome."
+  },
+  "Culture": {
+    "title": "Culture & Stories",
+    "subtitle": "Long-form deep-dives into the textiles, masks, spices and rituals that shape the continent.",
+    "readArticle": "Read article",
+    "relatedStories": "Related stories",
+    "publishedOn": "Published {date}"
+  },
+  "Filters": {
+    "all": "All",
+    "any": "Any",
+    "from": "From",
+    "to": "To"
+  },
+  "Common": {
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "view": "View",
+    "more": "More",
+    "less": "Less",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading…"
+  }
+}
