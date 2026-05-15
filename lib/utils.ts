@@ -1,29 +1,25 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import type { Locale } from './types';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// 1 EUR ≈ 655.957 FCFA — fixed XAF/EUR peg
-const EUR_TO_FCFA = 655.957;
-
-export function eurToFcfa(eur: number): number {
-  return Math.round((eur * EUR_TO_FCFA) / 50) * 50; // round to nearest 50 FCFA
-}
-
-export function formatPrice(amountEur: number, locale: 'en' | 'fr' = 'en') {
-  const fcfa = eurToFcfa(amountEur);
+/** Format an FCFA (XAF) amount with locale-aware thousands separators. */
+export function formatPrice(amount: number, locale: Locale = 'fr') {
   const formatter = new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : 'en-US', {
     maximumFractionDigits: 0,
   });
-  return `${formatter.format(fcfa)} FCFA`;
+  return `${formatter.format(Math.round(amount))} FCFA`;
 }
 
-export function pickLocale<T>(
-  value: { en: T; fr: T },
-  locale: 'en' | 'fr',
-): T {
+/** Compact number formatting (e.g. sold counts). */
+export function formatCount(value: number, locale: Locale = 'fr') {
+  return new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : 'en-US').format(value);
+}
+
+export function pickLocale<T>(value: { en: T; fr: T }, locale: Locale): T {
   return value[locale] ?? value.en;
 }
 

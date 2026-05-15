@@ -11,6 +11,7 @@ import { Footer } from '@/components/layout/Footer';
 import { BottomNavMobile } from '@/components/layout/BottomNavMobile';
 import { CartProvider } from '@/lib/cart-context';
 import { WishlistProvider } from '@/lib/wishlist-context';
+import { SITE } from '@/lib/constants';
 import '../globals.css';
 
 const fraunces = Fraunces({
@@ -36,13 +37,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const SITE_URL = 'https://afrima-app.vercel.app';
-
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FAF7F2' },
-    { media: '(prefers-color-scheme: dark)', color: '#1C1917' },
-  ],
+  themeColor: '#fbfaf8',
   width: 'device-width',
   initialScale: 1,
 };
@@ -56,14 +52,12 @@ export async function generateMetadata({
   const isFr = locale === 'fr';
 
   const title = isFr
-    ? 'AFRIMA — L’Afrique authentique, livrée'
-    : 'AFRIMA — Authentic Africa, delivered';
-  const description = isFr
-    ? 'Le marché pan-africain de la culture authentique. 22 pays, 250+ artisans, prix direct.'
-    : 'The Pan-African marketplace of authentic culture. 22 countries, 250+ artisans, direct prices.';
+    ? 'AFRIMA — Électronique & maison, livré au Cameroun'
+    : 'AFRIMA — Electronics & home, delivered across Africa';
+  const description = isFr ? SITE.description.fr : SITE.description.en;
 
   return {
-    metadataBase: new URL(SITE_URL),
+    metadataBase: new URL(SITE.url),
     title: {
       default: title,
       template: '%s · AFRIMA',
@@ -71,55 +65,40 @@ export async function generateMetadata({
     description,
     applicationName: 'AFRIMA',
     keywords: [
-      'African marketplace',
-      'African crafts',
-      'Toghu',
-      'Kente',
-      'Bogolan',
-      'shea butter',
-      'Berber rug',
-      'African artisans',
-      'pan-African',
-      'fair trade',
-      'marché africain',
-      'artisanat africain',
+      'AFRIMA',
+      'électronique Cameroun',
+      'smartphone Cameroun',
+      'boutique en ligne Cameroun',
+      'électroménager Douala',
+      'ordinateur Yaoundé',
+      'livraison Afrique',
+      'MTN MoMo',
+      'Orange Money',
+      'prix de gros',
+      'online electronics store',
+      'home appliances Africa',
     ],
     authors: [{ name: 'Idriss Jordane', url: 'https://idrissjordane.dev' }],
     creator: 'Idriss Jordane',
     publisher: 'AFRIMA',
     alternates: {
       canonical: '/',
-      languages: {
-        en: '/',
-        fr: '/fr',
-      },
+      languages: { fr: '/', en: '/en' },
     },
     openGraph: {
       type: 'website',
       siteName: 'AFRIMA',
       title,
       description,
-      url: SITE_URL,
+      url: SITE.url,
       locale: isFr ? 'fr_FR' : 'en_US',
-      images: [
-        {
-          url: '/opengraph-image.png',
-          width: 1200,
-          height: 630,
-          alt: 'AFRIMA — ' + title,
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      creator: '@idrissjordane',
     },
-    robots: {
-      index: true,
-      follow: true,
-    },
+    robots: { index: true, follow: true },
     category: 'shopping',
   };
 }
@@ -149,7 +128,7 @@ export default async function LocaleLayout({
                 href="#main"
                 className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-3 focus:py-2 focus:text-bone"
               >
-                Skip to content
+                {locale === 'fr' ? 'Aller au contenu' : 'Skip to content'}
               </a>
               <TopPromoBar />
               <Header />

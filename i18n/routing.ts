@@ -1,10 +1,10 @@
 import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
-  locales: ['en', 'fr'],
-  defaultLocale: 'en',
+  locales: ['fr', 'en'],
+  defaultLocale: 'fr',
   localePrefix: 'as-needed',
-  // Disable browser-language auto-detection — / always serves EN
+  // Disable browser-language auto-detection — / always serves the default locale.
   localeDetection: false,
 });
 

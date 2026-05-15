@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight, Lock } from 'lucide-react';
 import { Link, useRouter } from '@/i18n/navigation';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
+import { PaymentMethods } from '@/components/shared/PaymentMethods';
 import { useCart } from '@/lib/cart-context';
 import { productsBySlug } from '@/data/products';
 import { formatPrice, pickLocale } from '@/lib/utils';
@@ -20,29 +20,34 @@ export function CartView({ locale }: { locale: Locale }) {
   const lines = items
     .map((i) => ({ product: productsBySlug[i.slug], qty: i.qty }))
     .filter((l) => l.product);
+  const count = lines.reduce((s, l) => s + l.qty, 0);
   const subtotal = lines.reduce((s, l) => s + l.product.price * l.qty, 0);
   const shipping = subtotal >= FREE_SHIPPING_THRESHOLD || subtotal === 0 ? 0 : SHIPPING_FEE;
   const total = subtotal + shipping;
+  const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
 
   if (!ready) {
     return (
       <div className="mx-auto max-w-[1440px] px-4 py-16 md:px-8 md:py-20">
-        <h1 className="font-display text-5xl md:text-7xl">{t('title')}</h1>
+        <h1 className="font-display text-4xl md:text-6xl">{t('title')}</h1>
       </div>
     );
   }
 
   if (lines.length === 0) {
     return (
-      <div className="mx-auto max-w-[1440px] px-4 py-16 md:px-8 md:py-20">
-        <h1 className="font-display text-5xl md:text-7xl">{t('title')}</h1>
-        <div className="mt-12 max-w-md flex flex-col items-start gap-5">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-ink/20">
-            <ShoppingBag className="h-8 w-8 text-ink/40" />
+      <div className="mx-auto max-w-[1440px] px-4 py-16 md:px-8 md:py-24">
+        <h1 className="font-display text-4xl md:text-6xl">{t('title')}</h1>
+        <div className="mt-10 flex max-w-md flex-col items-start gap-5">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-bone-deep">
+            <ShoppingBag className="h-8 w-8 text-muted-foreground" />
           </div>
-          <p className="text-ink/70">{t('empty')}</p>
-          <Button asChild variant="ink" size="md">
-            <Link href="/">{t('emptyCta')}</Link>
+          <div>
+            <p className="text-lg font-medium text-ink">{t('empty')}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{t('emptySub')}</p>
+          </div>
+          <Button asChild variant="primary" size="md">
+            <Link href="/categories">{t('emptyCta')}</Link>
           </Button>
         </div>
       </div>
@@ -50,49 +55,55 @@ export function CartView({ locale }: { locale: Locale }) {
   }
 
   return (
-    <div className="mx-auto max-w-[1440px] px-4 py-12 md:px-8 md:py-16">
-      <h1 className="font-display text-4xl md:text-7xl">{t('title')}</h1>
-      <p className="mt-2 font-mono text-xs uppercase tracking-wider text-ink/60" data-num>
-        {t('items', { count: lines.reduce((s, l) => s + l.qty, 0) })}
+    <div className="mx-auto max-w-[1440px] px-4 py-10 md:px-8 md:py-14">
+      <h1 className="font-display text-4xl md:text-6xl">{t('title')}</h1>
+      <p className="mt-2 font-mono text-xs uppercase tracking-wide text-muted-foreground" data-num>
+        {t('items', { count })}
       </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12">
-        <div className="lg:col-span-7 space-y-6">
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+        {/* Lines */}
+        <div className="space-y-3 lg:col-span-7">
           {lines.map(({ product, qty }) => (
             <div
               key={product.slug}
-              className="grid grid-cols-[100px_1fr] sm:grid-cols-[120px_1fr_auto] items-start gap-4 border-b border-ink/10 pb-6"
+              className="flex gap-4 rounded-xl border border-border bg-surface p-3 md:p-4"
             >
               <Link
                 href={`/products/${product.slug}`}
-                className="relative block aspect-square overflow-hidden bg-bone-deep"
+                className="relative block aspect-square w-24 shrink-0 overflow-hidden rounded-lg bg-bone-deep md:w-32"
               >
                 <Image
                   src={product.images[0]}
                   alt={pickLocale(product.name, locale)}
                   fill
-                  sizes="120px"
+                  sizes="128px"
                   className="object-cover"
+                  fallbackText={product.brand}
+                  fallbackSeed={product.slug}
                 />
               </Link>
-              <div className="min-w-0">
+              <div className="flex min-w-0 flex-1 flex-col">
+                <div className="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
+                  {product.brand}
+                </div>
                 <Link
                   href={`/products/${product.slug}`}
-                  className="font-display text-base sm:text-lg leading-tight hover:text-clay"
+                  className="text-sm font-medium leading-snug hover:text-clay md:text-base"
                 >
                   {pickLocale(product.name, locale)}
                 </Link>
-                <div className="mt-1 line-clamp-1 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-ink/50">
-                  {product.materials.slice(0, 2).join(' · ')}
+                <div className="mt-1 font-mono text-xs tabular-nums text-muted-foreground" data-num>
+                  {formatPrice(product.price, locale)}
                 </div>
 
-                <div className="mt-3 flex flex-wrap items-center gap-3">
-                  <div className="inline-flex items-stretch border border-ink/20">
+                <div className="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                  <div className="inline-flex items-stretch rounded-lg border border-border">
                     <button
                       type="button"
                       onClick={() => setQty(product.slug, qty - 1)}
-                      className="px-2.5 py-1.5 hover:bg-ink/5"
-                      aria-label="Decrease quantity"
+                      className="px-2.5 py-1.5 hover:bg-bone-deep"
+                      aria-label="−"
                     >
                       <Minus className="h-3.5 w-3.5" />
                     </button>
@@ -105,8 +116,8 @@ export function CartView({ locale }: { locale: Locale }) {
                     <button
                       type="button"
                       onClick={() => setQty(product.slug, qty + 1)}
-                      className="px-2.5 py-1.5 hover:bg-ink/5"
-                      aria-label="Increase quantity"
+                      className="px-2.5 py-1.5 hover:bg-bone-deep"
+                      aria-label="+"
                     >
                       <Plus className="h-3.5 w-3.5" />
                     </button>
@@ -114,24 +125,15 @@ export function CartView({ locale }: { locale: Locale }) {
                   <button
                     type="button"
                     onClick={() => remove(product.slug)}
-                    className="inline-flex items-center gap-1.5 text-xs text-ink/60 hover:text-berry"
+                    className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-berry"
                   >
                     <Trash2 className="h-3.5 w-3.5" />
                     {t('remove')}
                   </button>
                 </div>
-
-                {/* Price on small screens */}
-                <div
-                  className="mt-3 font-mono text-base font-semibold tabular-nums sm:hidden"
-                  data-num
-                >
-                  {formatPrice(product.price * qty, locale)}
-                </div>
               </div>
-              {/* Price on large screens */}
               <div
-                className="hidden font-mono text-lg font-semibold tabular-nums sm:block"
+                className="hidden shrink-0 font-mono text-lg font-semibold tabular-nums sm:block"
                 data-num
               >
                 {formatPrice(product.price * qty, locale)}
@@ -140,13 +142,14 @@ export function CartView({ locale }: { locale: Locale }) {
           ))}
         </div>
 
-        <aside className="lg:col-span-5 lg:col-start-9 lg:sticky lg:top-24 lg:self-start">
-          <div className="border-2 border-ink p-6">
-            <div className="font-mono text-[10px] uppercase tracking-wider text-ink/50">
-              Summary
+        {/* Summary */}
+        <aside className="lg:col-span-5 lg:col-start-8 lg:sticky lg:top-24 lg:self-start">
+          <div className="rounded-xl border border-border bg-surface p-6 card-shadow">
+            <div className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              {t('summary')}
             </div>
 
-            <dl className="mt-4 space-y-3 text-sm">
+            <dl className="mt-4 space-y-2.5 text-sm">
               <div className="flex items-baseline justify-between">
                 <dt className="text-ink/70">{t('subtotal')}</dt>
                 <dd className="font-mono tabular-nums" data-num>
@@ -156,14 +159,15 @@ export function CartView({ locale }: { locale: Locale }) {
               <div className="flex items-baseline justify-between">
                 <dt className="text-ink/70">{t('shipping')}</dt>
                 <dd className="font-mono tabular-nums" data-num>
-                  {shipping === 0
-                    ? locale === 'fr'
-                      ? 'Offerte'
-                      : 'Free'
-                    : formatPrice(shipping, locale)}
+                  {shipping === 0 ? t('free') : formatPrice(shipping, locale)}
                 </dd>
               </div>
-              <div className="flex items-baseline justify-between border-t border-ink/15 pt-3 text-lg font-semibold">
+              {remaining > 0 ? (
+                <div className="rounded-lg bg-bone-deep px-3 py-2 text-xs text-ink/65">
+                  {t('addMore', { amount: formatPrice(remaining, locale) })}
+                </div>
+              ) : null}
+              <div className="flex items-baseline justify-between border-t border-border pt-3 text-lg font-semibold">
                 <dt>{t('total')}</dt>
                 <dd className="font-mono tabular-nums" data-num>
                   {formatPrice(total, locale)}
@@ -171,15 +175,8 @@ export function CartView({ locale }: { locale: Locale }) {
               </div>
             </dl>
 
-            <div className="mt-5 flex gap-2">
-              <Input placeholder={t('promo')} className="flex-1" />
-              <Button variant="outline" size="sm">
-                {t('apply')}
-              </Button>
-            </div>
-
             <Button
-              variant="ink"
+              variant="primary"
               size="lg"
               className="mt-5 w-full"
               onClick={() => router.push('/checkout')}
@@ -188,8 +185,20 @@ export function CartView({ locale }: { locale: Locale }) {
               <ArrowRight />
             </Button>
 
-            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-ink/55">
-              <Lock className="h-3 w-3" /> Secure (demo) checkout
+            <button
+              type="button"
+              onClick={() => router.push('/categories')}
+              className="mt-2 block w-full text-center font-mono text-[11px] uppercase tracking-wide text-muted-foreground hover:text-clay"
+            >
+              {t('continueShopping')}
+            </button>
+
+            <div className="mt-5 border-t border-border pt-4">
+              <PaymentMethods locale={locale} />
+            </div>
+
+            <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
+              <Lock className="h-3 w-3" /> {t('secureNote')}
             </div>
           </div>
         </aside>

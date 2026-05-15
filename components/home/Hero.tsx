@@ -2,157 +2,154 @@
 
 import { motion } from 'framer-motion';
 import { SafeImage as Image } from '@/components/shared/SafeImage';
-import { useLocale, useTranslations } from 'next-intl';
-import { ArrowRight, Star } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { ArrowRight, Truck, CreditCard, ShieldCheck, Star } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { AdinkraPattern, NoiseOverlay } from '@/components/shared/AdinkraPattern';
 import { Button } from '@/components/ui/Button';
 
-const stagger = { initial: {}, animate: { transition: { staggerChildren: 0.08 } } };
-const word = {
-  initial: { y: '110%', opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
-};
+const IMG = (id: string) => `/products/${id}.jpg`;
 
-const heroImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1551830820-330a71b99659?w=900&q=80&auto=format&fit=crop',
-    label: { en: 'Toghu', fr: 'Toghu' },
-    rotate: '-3deg',
-    offset: 'translate-y-2',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900&q=80&auto=format&fit=crop',
-    label: { en: 'Shea', fr: 'Karité' },
-    rotate: '2deg',
-    offset: '-translate-y-3',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=900&q=80&auto=format&fit=crop',
-    label: { en: 'Atlas', fr: 'Atlas' },
-    rotate: '-1deg',
-    offset: 'translate-y-4',
-  },
-];
+const ease = [0.22, 1, 0.36, 1] as const;
+const stagger = { animate: { transition: { staggerChildren: 0.09 } } };
+const rise = {
+  initial: { y: 24, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.7, ease } },
+};
 
 export function Hero() {
   const t = useTranslations('Hero');
-  const locale = useLocale();
+
+  const features = [
+    { Icon: Truck, label: t('feature1') },
+    { Icon: CreditCard, label: t('feature2') },
+    { Icon: ShieldCheck, label: t('feature3') },
+  ];
 
   return (
-    <section className="relative overflow-hidden border-b border-ink/10">
-      <AdinkraPattern opacity={0.06} />
-      <NoiseOverlay />
-      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 gap-10 px-4 py-12 md:grid-cols-12 md:gap-6 md:px-8 md:py-20 lg:py-28">
-        {/* Left text */}
+    <section className="relative overflow-hidden border-b border-border bg-bone">
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-clay/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-ochre/10 blur-3xl" />
+
+      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-4 py-20 md:grid-cols-12 md:gap-8 md:px-8 md:py-28">
+        {/* Text */}
         <motion.div
-          className="md:col-span-7 lg:col-span-7 flex flex-col justify-center"
+          className="md:col-span-6"
           initial="initial"
           animate="animate"
           variants={stagger}
         >
-          <motion.div variants={word} className="font-mono text-xs uppercase tracking-[0.3em] text-clay">
+          <motion.span
+            variants={rise}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 font-mono text-[11px] uppercase tracking-wide text-clay"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-clay" />
             {t('kicker')}
-          </motion.div>
-          <h1 className="mt-4 font-display text-[15vw] leading-[0.85] tracking-tight text-ink md:text-[8vw] lg:text-[7.5rem]">
-            <span className="overflow-hidden block">
-              <motion.span variants={word} className="block">{t('line1')}</motion.span>
-            </span>
-            <span className="overflow-hidden block">
-              <motion.span variants={word} className="block italic text-ochre">{t('line2')}</motion.span>
-            </span>
-            <span className="overflow-hidden block">
-              <motion.span variants={word} className="block">{t('line3')}</motion.span>
-            </span>
-          </h1>
+          </motion.span>
 
-          <motion.p variants={word} className="mt-6 max-w-md text-base text-ink/70 md:text-lg">
+          <motion.h1
+            variants={rise}
+            className="mt-5 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl"
+          >
+            {t('titleA')} <span className="text-clay">{t('titleB')}</span>.
+          </motion.h1>
+
+          <motion.p
+            variants={rise}
+            className="mt-5 max-w-md text-base text-ink/70 md:text-lg"
+          >
             {t('subtitle')}
           </motion.p>
 
-          <motion.div variants={word} className="mt-8 flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" variant="ink">
-              <Link href="/categories/fashion-textiles">
+          <motion.div variants={rise} className="mt-7 flex flex-wrap gap-3">
+            <Button asChild size="lg" variant="primary">
+              <Link href="/categories">
                 {t('ctaShop')}
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/artisans">{t('ctaArtisans')}</Link>
+              <Link href="/deals">{t('ctaDeals')}</Link>
             </Button>
           </motion.div>
 
-          <motion.div variants={word} className="mt-10 flex flex-wrap items-end gap-8">
-            <Stat n="22" label={t('stat1')} />
-            <Stat n="250+" label={t('stat2')} />
-            <Stat n="800+" label={t('stat3')} />
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" />
-                ))}
-              </div>
-              <span className="font-mono text-[11px] uppercase tracking-wider text-ink/60" data-num>
-                4.8 / 5 · 12,000+ buyers
-              </span>
-            </div>
-          </motion.div>
+          <motion.ul
+            variants={rise}
+            className="mt-8 flex flex-wrap gap-x-6 gap-y-2.5"
+          >
+            {features.map(({ Icon, label }) => (
+              <li key={label} className="flex items-center gap-2 text-sm text-ink/75">
+                <Icon className="h-4 w-4 text-clay" />
+                {label}
+              </li>
+            ))}
+          </motion.ul>
         </motion.div>
 
-        {/* Right images collage */}
+        {/* Image collage */}
         <motion.div
-          className="md:col-span-5 lg:col-span-5 relative h-[420px] md:h-[600px]"
+          className="relative md:col-span-6"
           initial="initial"
           animate="animate"
-          variants={{ initial: {}, animate: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } } }}
+          variants={{ animate: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
         >
-          {heroImages.map((img, i) => {
-            const positions = [
-              'top-0 left-0 md:left-2 w-[55%] md:w-[60%]',
-              'top-12 right-0 w-[60%] md:w-[55%]',
-              'bottom-0 left-12 md:left-20 w-[55%] md:w-[55%]',
-            ];
-            return (
-              <motion.div
-                key={i}
-                variants={{
-                  initial: { opacity: 0, scale: 0.9, y: 20 },
-                  animate: {
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-                  },
-                }}
-                whileHover={{ rotate: 0, scale: 1.03 }}
-                style={{ transform: `rotate(${img.rotate})` }}
-                className={`absolute aspect-[3/4] ${positions[i]} ${img.offset} editorial-shadow`}
-              >
-                <Image
-                  src={img.src}
-                  alt={locale === 'fr' ? img.label.fr : img.label.en}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 30vw"
-                  priority={i === 0}
-                  className="object-cover ink-border"
-                />
-                <div className="absolute -top-3 left-3 inline-flex items-center bg-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-bone">
-                  0{i + 1} / {locale === 'fr' ? img.label.fr : img.label.en}
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
+            <div className="space-y-3 md:space-y-4">
+              <Tile src={IMG('photo-1496181133206-80ce9b88a853')} alt="Laptop" tall priority />
+              <Tile src={IMG('photo-1505740420928-5e560c06d30e')} alt="Headphones" />
+            </div>
+            <div className="space-y-3 pt-8 md:space-y-4">
+              <Tile src={IMG('photo-1511707171634-5f897ff02aa9')} alt="Smartphone" priority />
+              <Tile src={IMG('photo-1593359677879-a4bb92f829d1')} alt="Smart TV" tall />
+            </div>
+          </div>
+
+          <motion.div
+            variants={rise}
+            className="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2.5 rounded-xl border border-border bg-surface px-4 py-2.5 card-shadow"
+          >
+            <div className="flex">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" />
+              ))}
+            </div>
+            <span className="font-mono text-[11px] uppercase tracking-wide text-ink/70" data-num>
+              4.7 / 5 · 12 000+
+            </span>
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
 }
 
-function Stat({ n, label }: { n: string; label: string }) {
+function Tile({
+  src,
+  alt,
+  tall,
+  priority,
+}: {
+  src: string;
+  alt: string;
+  tall?: boolean;
+  priority?: boolean;
+}) {
   return (
-    <div>
-      <div className="font-display text-3xl text-ink md:text-4xl" data-num>{n}</div>
-      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/50">{label}</div>
-    </div>
+    <motion.div
+      variants={rise}
+      className={`relative overflow-hidden rounded-xl border border-border bg-bone-deep card-shadow ${
+        tall ? 'aspect-[4/5]' : 'aspect-square'
+      }`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 45vw, 25vw"
+        priority={priority}
+        className="object-cover"
+        fallbackText={alt}
+        fallbackSeed={src}
+      />
+    </motion.div>
   );
 }

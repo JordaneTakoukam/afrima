@@ -1,39 +1,29 @@
 import type { MetadataRoute } from 'next';
 import { products } from '@/data/products';
-import { countries } from '@/data/countries';
 import { categories } from '@/data/categories';
-import { artisans } from '@/data/artisans';
-import { stories } from '@/data/stories';
+import { SITE } from '@/lib/constants';
 
-const BASE = 'https://afrima-app.vercel.app';
+const BASE = SITE.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticPaths = ['', '/countries', '/artisans', '/culture', '/deals', '/about', '/cart', '/wishlist'];
-
+  const staticPaths = ['', '/categories', '/deals', '/about', '/search', '/cart', '/wishlist'];
   const dynamicPaths = [
-    ...products.map((p) => `/products/${p.slug}`),
-    ...countries.map((c) => `/countries/${c.slug}`),
     ...categories.map((c) => `/categories/${c.slug}`),
-    ...artisans.map((a) => `/artisans/${a.slug}`),
-    ...stories.map((s) => `/culture/${s.slug}`),
+    ...products.map((p) => `/products/${p.slug}`),
   ];
 
-  const urls = [...staticPaths, ...dynamicPaths];
-
-  return urls.flatMap((path) => [
-    {
-      url: `${BASE}${path}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: path === '' ? 1 : 0.7,
-      alternates: {
-        languages: {
-          en: `${BASE}${path}`,
-          fr: `${BASE}/fr${path}`,
-        },
+  return [...staticPaths, ...dynamicPaths].map((path) => ({
+    url: `${BASE}${path}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: path === '' ? 1 : 0.7,
+    alternates: {
+      languages: {
+        fr: `${BASE}${path}`,
+        en: `${BASE}/en${path}`,
       },
     },
-  ]);
+  }));
 }

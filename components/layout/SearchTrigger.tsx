@@ -16,20 +16,17 @@ export function SearchTrigger() {
         e.preventDefault();
         if (q.trim()) router.push(`/search?q=${encodeURIComponent(q.trim())}`);
       }}
-      className="group flex items-center gap-2 border border-ink/15 bg-bone-deep/40 px-3 transition-colors focus-within:border-ink"
+      className="group flex items-center gap-2 rounded-lg border border-border bg-surface px-3 transition-colors focus-within:border-clay"
     >
-      <Search className="h-4 w-4 text-ink/50" aria-hidden />
+      <Search className="h-4 w-4 text-muted-foreground" aria-hidden />
       <input
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder={t('search')}
-        className="h-10 w-full bg-transparent text-sm placeholder:text-ink/40 focus:outline-none"
+        placeholder={t('searchPlaceholder')}
+        className="h-10 w-full bg-transparent text-sm placeholder:text-muted-foreground focus:outline-none"
         aria-label={t('search')}
       />
-      <kbd className="hidden md:inline-flex items-center gap-0.5 rounded border border-ink/15 bg-bone px-1.5 py-0.5 font-mono text-[10px] uppercase text-ink/50">
-        ⌘K
-      </kbd>
     </form>
   );
 }

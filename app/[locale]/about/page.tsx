@@ -1,6 +1,19 @@
+import { SafeImage as Image } from '@/components/shared/SafeImage';
+import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { Heart, Hand, Award, Globe2 } from 'lucide-react';
-import { AdinkraPattern } from '@/components/shared/AdinkraPattern';
+import { Tag, ShieldCheck, Truck, Headphones, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { Link } from '@/i18n/navigation';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'About' });
+  return { title: t('title'), description: t('subtitle') };
+}
 
 export default async function AboutPage({
   params,
@@ -10,65 +23,127 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('About');
+  const tn = await getTranslations('Nav');
+
+  const stats = [
+    { value: t('stat1Value'), label: t('stat1Label') },
+    { value: t('stat2Value'), label: t('stat2Label') },
+    { value: t('stat3Value'), label: t('stat3Label') },
+  ];
+  const values = [
+    { Icon: Tag, title: t('value1Title'), body: t('value1Body') },
+    { Icon: ShieldCheck, title: t('value2Title'), body: t('value2Body') },
+    { Icon: Truck, title: t('value3Title'), body: t('value3Body') },
+    { Icon: Headphones, title: t('value4Title'), body: t('value4Body') },
+  ];
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-ink/10">
-        <AdinkraPattern opacity={0.07} />
-        <div className="relative mx-auto max-w-[1440px] px-4 py-20 md:px-8 md:py-28">
-          <div className="font-mono text-xs uppercase tracking-[0.3em] text-clay">{t('kicker')}</div>
-          <h1 className="mt-3 font-display text-6xl leading-[0.95] md:text-9xl">{t('title')}</h1>
-          <p className="mt-6 max-w-2xl text-ink/80 md:text-lg">{t('subtitle')}</p>
+      {/* Hero */}
+      <section className="border-b border-border bg-bone-deep">
+        <div className="mx-auto max-w-[1440px] px-4 py-16 md:px-8 md:py-24">
+          <div className="font-mono text-xs uppercase tracking-[0.2em] text-clay">
+            {t('kicker')}
+          </div>
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-[1.05] md:text-7xl">
+            {t('title')}
+          </h1>
+          <p className="mt-5 max-w-2xl text-ink/75 md:text-lg">{t('subtitle')}</p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1440px] px-4 py-16 md:px-8">
-        <h2 className="font-display text-3xl md:text-5xl">{t('valuesTitle')}</h2>
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <Value Icon={Heart} title={t('value1')} body={t('value1Body')} />
-          <Value Icon={Award} title={t('value2')} body={t('value2Body')} />
-          <Value Icon={Hand} title={t('value3')} body={t('value3Body')} />
-          <Value Icon={Globe2} title={t('value4')} body={t('value4Body')} />
+      {/* Stats */}
+      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-4 px-4 py-12 sm:grid-cols-3 md:px-8">
+        {stats.map((s) => (
+          <div key={s.label} className="rounded-xl border border-border bg-surface p-6 card-shadow">
+            <div className="font-display text-4xl font-semibold text-clay md:text-5xl" data-num>
+              {s.value}
+            </div>
+            <div className="mt-1 text-sm text-ink/70">{s.label}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* Mission */}
+      <section className="mx-auto grid max-w-[1440px] items-center gap-10 px-4 py-12 md:grid-cols-2 md:px-8 md:py-16">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-bone-deep">
+          <Image
+            src="/products/photo-1556742049-0cfed4f6a45d.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            fallbackText="AFRIMA"
+          />
+        </div>
+        <div>
+          <h2 className="font-display text-3xl font-semibold md:text-4xl">
+            {t('missionTitle')}
+          </h2>
+          <p className="mt-4 text-ink/75 leading-relaxed md:text-lg">{t('missionBody')}</p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 py-16 md:px-8">
-        <h2 className="font-display text-3xl md:text-5xl">{t('missionTitle')}</h2>
-        <p className="mt-6 text-ink/80 leading-relaxed md:text-lg">
-          {locale === 'fr'
-            ? "AFRIMA est née d'un constat simple : les artisans africains font des pièces extraordinaires, mais leur part de la valeur finale frôle souvent zéro. Le wax que vous achetez à Paris a fait trois ou quatre intermédiaires. Le karité que vous mettez sur votre peau a quitté la coopérative à 1 300 FCFA pour finir vendu à 23 000 FCFA. Nous coupons la chaîne. Direct artisan, marges transparentes, fair-trade non négociable."
-            : "AFRIMA started from a simple observation: African artisans make extraordinary pieces, but their share of the final value is often near zero. The wax fabric you buy in Paris went through three or four middlemen. The shea butter on your skin left the cooperative at 1,300 FCFA to be sold at 23,000 FCFA. We cut the chain. Direct from artisan, transparent margins, fair-trade non-negotiable."}
-        </p>
-      </section>
-
-      <section className="bg-ink text-bone">
-        <div className="mx-auto max-w-[1440px] px-4 py-16 md:px-8 md:py-20">
-          <h2 className="font-display text-3xl md:text-5xl">{t('teamTitle')}</h2>
-          <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {[
-              { name: 'Idriss Jordane', role: 'Founder' },
-              { name: 'Aïsha B.', role: 'Sourcing lead' },
-              { name: 'Kojo M.', role: 'Design' },
-              { name: 'Léa T.', role: 'Operations' },
-            ].map((p) => (
-              <div key={p.name} className="flex flex-col gap-1 border-l-2 border-ochre pl-4">
-                <div className="font-display text-xl">{p.name}</div>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-bone/60">{p.role}</div>
+      {/* Values */}
+      <section className="border-y border-border bg-bone-deep">
+        <div className="mx-auto max-w-[1440px] px-4 py-14 md:px-8 md:py-16">
+          <h2 className="font-display text-3xl font-semibold md:text-4xl">
+            {t('valuesTitle')}
+          </h2>
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map(({ Icon, title, body }) => (
+              <div
+                key={title}
+                className="rounded-xl border border-border bg-surface p-5 card-shadow"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-clay/10 text-clay">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <div className="mt-4 font-display text-lg font-semibold">{title}</div>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/70">{body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-    </>
-  );
-}
 
-function Value({ Icon, title, body }: { Icon: typeof Heart; title: string; body: string }) {
-  return (
-    <div className="flex flex-col gap-3">
-      <Icon className="h-6 w-6 text-clay" />
-      <div className="font-display text-xl leading-tight">{title}</div>
-      <p className="text-sm text-ink/70">{body}</p>
-    </div>
+      {/* Contact */}
+      <section className="mx-auto max-w-[1440px] px-4 py-14 md:px-8 md:py-20">
+        <div className="rounded-2xl border border-border bg-ink px-6 py-12 text-bone md:px-12">
+          <div className="grid items-center gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="font-display text-3xl font-semibold md:text-4xl">
+                {t('contactTitle')}
+              </h2>
+              <p className="mt-3 text-bone/75">{t('contactBody')}</p>
+              <ul className="mt-5 space-y-2 text-sm text-bone/85">
+                <li className="flex items-center gap-2.5">
+                  <Phone className="h-4 w-4 text-ochre" /> +237 6 90 00 00 00
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <MessageCircle className="h-4 w-4 text-ochre" /> WhatsApp +237 6 90 00 00 00
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <Mail className="h-4 w-4 text-ochre" /> hello@afrima.cm
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              <Button asChild variant="primary" size="lg">
+                <Link href="/categories">{tn('shopAll')}</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-bone/30 bg-transparent text-bone hover:bg-bone hover:text-ink"
+              >
+                <Link href="/deals">{tn('deals')}</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

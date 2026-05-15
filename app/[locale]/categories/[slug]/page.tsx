@@ -1,7 +1,9 @@
 import { SafeImage as Image } from '@/components/shared/SafeImage';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { ProductCard } from '@/components/product/ProductCard';
+import { setRequestLocale } from 'next-intl/server';
+import { CategoryProducts } from '@/components/category/CategoryProducts';
+import { CategoryIcon } from '@/components/shared/CategoryIcon';
 import { categories, categoriesBySlug } from '@/data/categories';
 import { getProductsByCategory } from '@/data/products';
 import { pickLocale } from '@/lib/utils';
@@ -17,7 +19,7 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { locale, slug } = await params;
   const c = categoriesBySlug[slug];
   if (!c) return {};
@@ -34,62 +36,45 @@ export default async function CategoryPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('Category');
   const category = categoriesBySlug[slug];
   if (!category) notFound();
-
-  const products = getProductsByCategory(category.slug);
+  const loc = locale as Locale;
+  const list = getProductsByCategory(category.slug);
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-ink/10">
+      <section className="relative overflow-hidden border-b border-border bg-ink">
         <div className="absolute inset-0">
-          <Image src={category.cover} alt="" fill sizes="100vw" className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30" />
+          <Image
+            src={category.cover}
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover opacity-40"
+            fallbackText={pickLocale(category.name, loc)}
+            fallbackSeed={category.slug}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/40" />
         </div>
-        <div className="relative mx-auto max-w-[1440px] px-4 py-20 md:px-8 md:py-28 text-bone">
-          <div className="font-mono text-3xl text-ochre md:text-6xl" data-num>{category.numberLabel}</div>
-          <h1 className="mt-2 font-display text-5xl leading-[0.95] md:text-8xl">
-            {pickLocale(category.name, locale as Locale)}
+        <div className="relative mx-auto max-w-[1440px] px-4 py-14 text-bone md:px-8 md:py-20">
+          <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-clay text-bone">
+            <CategoryIcon name={category.icon} size={24} />
+          </span>
+          <h1 className="mt-4 font-display text-4xl font-semibold leading-tight md:text-6xl">
+            {pickLocale(category.name, loc)}
           </h1>
-          <p className="mt-4 max-w-2xl text-bone/85 md:text-lg">
-            {pickLocale(category.description, locale as Locale)}
+          <p className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-ochre">
+            {pickLocale(category.tagline, loc)}
           </p>
-          {category.subcategories ? (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {category.subcategories.map((s, i) => (
-                <span key={i} className="rounded-full border border-bone/30 px-3 py-1 text-xs font-mono uppercase tracking-wider">
-                  {pickLocale(s, locale as Locale)}
-                </span>
-              ))}
-            </div>
-          ) : null}
+          <p className="mt-4 max-w-2xl text-bone/80 md:text-lg">
+            {pickLocale(category.description, loc)}
+          </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1440px] px-4 py-12 md:px-8 md:py-16">
-        <div className="flex items-center justify-between">
-          <div className="font-mono text-[11px] uppercase tracking-wider text-ink/60" data-num>
-            {t('results', { count: products.length })}
-          </div>
-        </div>
-
-        {products.length === 0 ? (
-          <p className="mt-12 text-ink/60">{t('noResults')}</p>
-        ) : (
-          <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
-            {products.map((p) => (
-              <ProductCard key={p.slug} product={p} locale={locale as Locale} />
-            ))}
-          </div>
-        )}
-
-        <div className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl">More on {pickLocale(category.name, locale as Locale)}</h2>
-          <p className="mt-3 max-w-3xl text-ink/75 leading-relaxed">
-            {pickLocale(category.longDescription, locale as Locale)}
-          </p>
-        </div>
+      <section className="mx-auto max-w-[1440px] px-4 py-8 md:px-8 md:py-12">
+        <CategoryProducts products={list} locale={loc} />
       </section>
     </>
   );

@@ -1,14 +1,18 @@
+import type { Localized } from './types';
+
 export const SITE = {
   name: 'AFRIMA',
-  url: 'https://afrima.demo',
+  url: 'https://afrima.vercel.app',
   description: {
-    en: 'The Pan-African marketplace of authentic culture. 22 countries, 250+ artisans, direct prices.',
-    fr: "Le marché pan-africain de la culture authentique. 22 pays, 250+ artisans, prix direct.",
-  },
+    en: 'Electronics & home goods at wholesale prices — ordered online, delivered across Cameroon and Africa.',
+    fr: "Électronique & équipement maison à prix de gros — commandé en ligne, livré au Cameroun et partout en Afrique.",
+  } satisfies Localized,
 } as const;
 
-export const LOCALES = ['en', 'fr'] as const;
-export const DEFAULT_LOCALE = 'en';
+export const LOCALES = ['fr', 'en'] as const;
+export const DEFAULT_LOCALE = 'fr';
 
-export const FREE_SHIPPING_THRESHOLD = 100;
-export const SHIPPING_FEE = 9.99;
+/** Free delivery above this cart subtotal (FCFA). */
+export const FREE_SHIPPING_THRESHOLD = 150_000;
+/** Flat delivery fee below the free-shipping threshold (FCFA). */
+export const SHIPPING_FEE = 3_000;

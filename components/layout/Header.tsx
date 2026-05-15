@@ -8,27 +8,30 @@ import { Link } from '@/i18n/navigation';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-30 border-b border-ink/10 bg-bone/95 backdrop-blur supports-[backdrop-filter]:bg-bone/85">
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-3 px-4 md:h-20 md:gap-4 md:px-8">
+    <header className="sticky top-0 z-30 border-b border-border bg-bone/95 backdrop-blur supports-[backdrop-filter]:bg-bone/85">
+      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-3 px-4 md:h-[72px] md:gap-6 md:px-8">
         <MobileMenu />
 
-        <Link href="/" className="shrink-0 group inline-flex items-center gap-2">
-          <Logo size={28} className="md:hidden" />
-          <Logo size={32} className="hidden md:inline-flex" />
-          <span className="font-display text-2xl italic tracking-tight md:text-3xl">
+        <Link
+          href="/"
+          className="shrink-0 inline-flex items-center gap-2.5"
+          aria-label="AFRIMA"
+        >
+          <Logo size={34} />
+          <span className="font-display text-xl font-semibold tracking-tight md:text-2xl">
             AFRIMA
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1 ml-2">
+        <nav className="ml-3 hidden lg:flex">
           <MegaMenu />
         </nav>
 
-        <div className="ml-auto hidden md:block flex-1 max-w-md">
+        <div className="ml-auto hidden md:block md:w-64 lg:w-80">
           <SearchTrigger />
         </div>
 
-        <div className="ml-auto flex items-center gap-1 md:ml-3 md:gap-2">
+        <div className="ml-auto flex items-center gap-1 md:ml-1 md:gap-1.5">
           <LocaleSwitcher className="hidden md:inline-flex" />
           <HeaderCounts />
         </div>

@@ -6,11 +6,15 @@ const inHours = (h: number) => {
   return d.toISOString();
 };
 
+/** Live flash-deal countdowns. Slugs must carry `flashDeal: true`. */
 export const deals: Deal[] = [
-  { productSlug: 'royal-toghu-dress', discount: 26, endsAt: inHours(18), stockLeft: 4 },
-  { productSlug: 'raw-shea-butter', discount: 25, endsAt: inHours(8), stockLeft: 124 },
-  { productSlug: 'berber-atlas-carpet', discount: 24, endsAt: inHours(36), stockLeft: 6 },
-  { productSlug: 'wax-print-fabric', discount: 26, endsAt: inHours(20), stockLeft: 36 },
-  { productSlug: 'ras-el-hanout', discount: 22, endsAt: inHours(12), stockLeft: 200 },
-  { productSlug: 'lenke-wood-djembe', discount: 18, endsAt: inHours(48), stockLeft: 11 },
+  { productSlug: 'itel-p55', endsAt: inHours(7) },
+  { productSlug: 'nasco-microwave-20l', endsAt: inHours(11) },
+  { productSlug: 'binatone-blender-15l', endsAt: inHours(15) },
+  { productSlug: 'tecno-camon-30', endsAt: inHours(20) },
+  { productSlug: 'jbl-tune-520bt', endsAt: inHours(28) },
+  { productSlug: 'hisense-43-smart-tv', endsAt: inHours(34) },
+  { productSlug: 'hp-250-g9', endsAt: inHours(40) },
+  { productSlug: 'corner-sofa-5-seat', endsAt: inHours(46) },
+  { productSlug: 'chauffe-eau-instantane', endsAt: inHours(9) },
 ];

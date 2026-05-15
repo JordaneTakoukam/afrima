@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 
+/** AFRIMA brand mark — a shopping bag with a warm gold handle. */
 export function Logo({
   className,
   size = 32,
@@ -18,24 +19,31 @@ export function Logo({
         height={size}
         viewBox="0 0 40 40"
         fill="none"
+        role="img"
         aria-label="AFRIMA"
         className="shrink-0"
       >
-        {/* Outer ring */}
-        <circle cx="20" cy="20" r="19" fill="#1C1917" />
-        {/* Sun disc */}
-        <circle cx="20" cy="20" r="13" fill="#C2410C" />
-        {/* Adinkra-inspired Gye Nyame mark */}
-        <g stroke="#FAF7F2" strokeWidth="1.6" strokeLinecap="round" fill="none">
-          <path d="M20 8 v24 M8 20 h24" />
-          <path d="M11 11 l18 18 M11 29 l18 -18" />
-        </g>
-        {/* Inner gold dot */}
-        <circle cx="20" cy="20" r="3.2" fill="#EAB308" />
-        <circle cx="20" cy="20" r="1.4" fill="#1C1917" />
+        <rect width="40" height="40" rx="11" fill="#E2510E" />
+        <path
+          d="M10.5 16 H29.5 L28 30.2 A2.7 2.7 0 0 1 25.3 32.6 H14.7 A2.7 2.7 0 0 1 12 30.2 Z"
+          fill="#FBFAF8"
+        />
+        <path
+          d="M15.2 16.4 V13.7 A4.8 4.8 0 0 1 24.8 13.7 V16.4"
+          stroke="#FBBF24"
+          strokeWidth="2.7"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <circle cx="20" cy="23.3" r="3" fill="#E2510E" />
       </svg>
       {showText ? (
-        <span className={cn('font-display text-2xl italic tracking-tight md:text-3xl', textClassName)}>
+        <span
+          className={cn(
+            'font-display text-2xl font-semibold tracking-tight md:text-3xl',
+            textClassName,
+          )}
+        >
           AFRIMA
         </span>
       ) : null}

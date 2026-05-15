@@ -1,120 +1,111 @@
-# 🌍 AFRIMA
+# 🛍️ AFRIMA
 
-> **The Pan-African Marketplace of Authentic Culture.**
-> *Authentic Africa. Unbeatable prices. Direct from artisans.*
+> **Electronics & home goods at wholesale prices.**
+> *Ordered online, delivered across Cameroon and Africa.*
 
-A static, portfolio-grade demo of a premium pan-African marketplace celebrating identity, culture and authenticity across **22 African countries**. Combining editorial storytelling with modern e-commerce patterns.
-
-![hero](https://images.unsplash.com/photo-1551830820-330a71b99659?w=1200&q=80)
+A portfolio-grade demo of a modern online store for **electronics and home goods** — phones, laptops, TVs, appliances, kitchenware and furniture — built for the Cameroonian and African market. Full shopping flow: browse → cart → quantity → checkout → order confirmation.
 
 ## ✨ What's inside
 
-- 🌍 **22 African countries** (Cameroon, Nigeria, Senegal, Morocco, Ghana, Mali, Kenya, Ethiopia, South Africa…)
-- 🛍️ **7 categories** + **48+ curated products** with full cultural context
-- 👐 **10 artisan portraits** with bios, signature crafts, quotes
-- 📰 **5 long-form cultural stories** (Bogolan, Kente, Dogon masks, Shea butter, Berber rugs)
+- 🛒 **6 departments**, **42 products** — phones, computers, TV & audio, appliances, kitchen, furniture
+- 💳 **Functional checkout** — cart with quantities, delivery details, payment method selection, order confirmation
+- 📱 **Payments** — MTN MoMo, Orange Money, Visa / Mastercard, PayPal, bank transfer
+- 🚚 **Delivery** — Cameroon in 1–4 days, the rest of Africa within 3 weeks
 - ⚡ **Flash deals** with live countdown timers
-- 🌐 **Bilingual EN / FR** via [next-intl](https://next-intl.dev) (default `en`, `/fr` for French)
-- 🛒 Cart, wishlist, search, product detail pages — all functional in mock mode
-- 📱 Fully responsive with mobile bottom nav, sticky CTAs
-- 🎨 Editorial design system — Fraunces × DM Sans × JetBrains Mono, terre palette, Adinkra patterns
-- 🚀 100% static — all pages prerendered as static HTML
+- 🔎 Search, category filters & sorting, wishlist
+- 🌐 **Bilingual FR / EN** via [next-intl](https://next-intl.dev) (default `fr`, `/en` for English)
+- 💰 Prices in **FCFA (XAF)**
+- 📱 Fully responsive with a mobile bottom nav and sticky add-to-cart
+- 🚀 Static-first — product and category pages prerendered at build time
 
-**~200 routes generated at build time.** Zero backend, zero database, zero API.
+**No backend, no database, no real transactions** — checkout ends on a demo "order confirmed" screen.
 
 ## 🛠️ Stack
 
-- **Next.js 16** · App Router · Turbopack · React 19.2
+- **Next.js 16** · App Router · React 19.2
 - **TypeScript** strict
 - **TailwindCSS v4** (CSS-first config)
 - **next-intl 4** for internationalization
-- **framer-motion** for stagger / scroll animations
+- **framer-motion** for scroll / stagger animations
 - **lucide-react** for iconography
-- **@radix-ui** primitives (Dialog, Tabs, Sheet, Slot, Scroll-area)
+- **@radix-ui** primitives (Dialog, Tabs, Sheet, Slot)
 - **sonner** for toast notifications
 - **next/image** + Unsplash CDN
 
 ## 🚀 Quick start
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) → English (default), or [http://localhost:3000/fr](http://localhost:3000/fr) for French.
+Open [http://localhost:3000](http://localhost:3000) → French (default), or [http://localhost:3000/en](http://localhost:3000/en) for English.
 
 ## 🏗️ Build
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm run start
 ```
 
 ## 📂 Project structure
 
 ```
 app/
-└── [locale]/                # Locale segment (en | fr)
+└── [locale]/                # Locale segment (fr | en)
     ├── layout.tsx           # Root layout, fonts, providers, header/footer
-    ├── page.tsx             # Homepage (Hero → FlashDeals → CountryGrid → …)
-    ├── products/[slug]
-    ├── countries/[slug]
-    ├── categories/[slug]
-    ├── artisans/[slug]
-    ├── culture/[slug]
-    ├── deals · cart · wishlist · search · about
+    ├── page.tsx             # Homepage (Hero → Categories → Deals → …)
+    ├── products/[slug]      # Product detail
+    ├── categories           # Category index
+    ├── categories/[slug]    # Category browser with sort + filters
+    ├── deals · cart · checkout · wishlist · search · about
     └── not-found.tsx
 components/
-├── home/                    # All homepage sections
-├── product/                 # ProductCard, ProductCardEditorial, ProductDetail, etc.
-├── layout/                  # Header, Footer, MegaMenu, MobileMenu, BottomNavMobile, LocaleSwitcher
-├── shared/                  # AdinkraPattern, CountdownTimer, RatingStars, PriceTag, …
-├── cart/ · search/          # Page-specific clients
+├── home/                    # Homepage sections
+├── product/                 # ProductCard, ProductDetail, AddToCartButton, …
+├── category/                # CategoryProducts (sort + filter)
+├── cart/                    # CartSheet, CartView, CheckoutView
+├── layout/                  # Header, Footer, MegaMenu, MobileMenu, BottomNavMobile
+├── shared/                  # PaymentMethods, CategoryIcon, PriceTag, CountdownTimer, …
 └── ui/                      # Button, Badge, Input, Sheet, Dialog, Tabs primitives
-data/                        # All static content (countries, products, artisans, stories, deals, reviews)
+data/                        # Static content — products, categories, reviews, deals, payment, shipping
 i18n/                        # routing, request, navigation
-messages/                    # en.json, fr.json — every UI string
-lib/                         # types, utils (cn, formatPrice, pickLocale)
+messages/                    # fr.json, en.json — every UI string
+lib/                         # types, constants, utils (cn, formatPrice, pickLocale)
 proxy.ts                     # next-intl middleware (Next.js 16 renamed `middleware` → `proxy`)
 ```
 
 ## 🎨 Design system
 
-- **Palette** — `bone` / `ink` / `earth` for editorial sections + `clay` / `ochre` / `gold` / `leaf` / `berry` for commercial accents.
-- **Typography** — **Fraunces** (display, italic), **DM Sans** (body), **JetBrains Mono** (prices, timers, badges).
-- **Patterns** — inline SVG Adinkra symbols at low opacity, paper-grain noise overlay.
-- **Editorial moves** — asymmetric hero, rotated cards, ink borders, tabular numerals on every price/timer.
-- **Temu energy** — flash-deal countdowns, "only X left" pills, sold counts, social-proof badges, stacked product badges — *but kept tasteful*.
+- **Palette** — warm `bone` surfaces, `ink` text, an energetic `clay` orange brand colour, plus `ochre` / `gold` / `leaf` accents.
+- **Typography** — **Fraunces** (display), **DM Sans** (body), **JetBrains Mono** (prices, timers, labels).
+- **Components** — rounded product cards with hover lift, clean payment chips, a multi-step checkout.
 
 ## 🌍 Internationalization
 
-- Default locale `en` has no URL prefix (`/products/royal-toghu-dress`).
-- French uses `/fr/products/royal-toghu-dress`.
-- LocaleSwitcher in header swaps between the two while preserving the current path.
-- All product / artisan / story copy is authored in both languages directly in `data/*.ts`.
+- Default locale `fr` has no URL prefix (`/products/iphone-15-pro`).
+- English uses `/en/products/iphone-15-pro`.
+- The LocaleSwitcher in the header swaps locale while preserving the current path.
+- All product, category and review copy is authored in both languages in `data/*.ts`.
 
 ## 🖼️ Image credits
 
-All images are sourced from [Unsplash](https://unsplash.com) under the [Unsplash License](https://unsplash.com/license). Photos are used for demonstration only.
+Product images originate from [Unsplash](https://unsplash.com) under the [Unsplash License](https://unsplash.com/license). They are downloaded and served locally from `public/products/` — the app makes no external image requests. Used for demonstration only.
 
 ## ⚠️ Disclaimer
 
-This is a **static portfolio demo**. No real transactions, no real artisans were contacted, no backend exists. Every product, artisan and review is fictional but inspired by real African crafts and traditions.
+This is a **demo project**. No real payment is processed and no order is shipped — checkout ends on a demo confirmation screen. Products, prices and reviews are fictional.
 
-## 📄 License
+## 👤 Credits
 
-MIT — Demo project.
-
-## 👤 Author
-
-**Idriss Jordane** · idrissjordane.dev
+Co-creator: **Magne Takoukam Chloé Martine** · Built by **Idriss Jordane** · idrissjordane.dev
 
 ---
 
 ## 🇫🇷 À propos
 
-AFRIMA est une démo de portfolio — un marché pan-africain premium célébrant l'identité, la culture et l'authenticité de 22 pays. Tout est statique, multilingue (EN par défaut, FR via `/fr`), et construit avec Next.js 16, Tailwind v4, framer-motion et next-intl.
+AFRIMA est une démo de boutique en ligne d'**électronique et d'équipement maison** pour le marché camerounais et africain — téléphones, ordinateurs, TV, électroménager, cuisine et mobilier. Le parcours d'achat complet est fonctionnel : navigation → panier → quantité → paiement → confirmation de commande.
 
-Chaque produit, artisan et histoire raconte une vraie tradition (Toghu Bamileke, Kente Ashanti, masques Dogon, karité, tapis berbères…) tout en gardant une grammaire e-commerce moderne — flash deals, badges de stock, étoiles, comptes vendus, panier — sans tomber dans le côté agressif.
+Paiement par MTN MoMo, Orange Money, Visa / Mastercard, PayPal ou virement bancaire. Prix en FCFA. Bilingue FR (par défaut) / EN, construit avec Next.js 16, Tailwind v4, framer-motion et next-intl.
 
-**Aucun backend, aucune transaction réelle.**
+**Aucun backend, aucune transaction réelle** — la commande se termine sur un écran de confirmation de démonstration.

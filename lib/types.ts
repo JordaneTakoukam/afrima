@@ -2,113 +2,76 @@ export type Locale = 'en' | 'fr';
 
 export type Localized<T = string> = { en: T; fr: T };
 
-export type Region = 'west' | 'central' | 'north' | 'east' | 'southern';
-
-export type Country = {
-  slug: string;
-  name: Localized;
-  nameLocal?: string;
-  flag: string;
-  region: Region;
-  regions: string[];
-  ethnicGroups: string[];
-  signatureProduct: Localized;
-  description: Localized;
-  productCount: number;
-  heroImage: string;
+/** A single key/value technical specification row. */
+export type Spec = {
+  label: Localized;
+  value: string;
 };
-
-export type Category = {
-  slug: string;
-  name: Localized;
-  description: Localized;
-  longDescription: Localized;
-  cover: string;
-  icon: string;
-  numberLabel: string;
-  subcategories?: Localized[];
-};
-
-export type ProductLabel =
-  | 'made-in-africa'
-  | 'hand-made'
-  | 'fair-trade'
-  | 'limited-edition'
-  | 'authentic';
-
-export type ProductUsage = 'wedding' | 'ceremony' | 'daily' | 'spiritual' | 'royal';
 
 export type Product = {
   slug: string;
   name: Localized;
+  brand: string;
+  /** Price in FCFA (XAF). */
   price: number;
+  /** Crossed-out reference price in FCFA, when on sale. */
   originalPrice?: number;
-  currency: 'EUR' | 'USD' | 'XOF';
-  country: string;
-  region?: string;
-  ethnicGroup?: string;
   category: string;
-  subcategory?: string;
   images: string[];
-  artisanSlug: string;
   description: Localized;
-  culturalContext: Localized;
-  materials: string[];
-  dimensions?: string;
-  usage: ProductUsage[];
-  labels: ProductLabel[];
-  shipsFrom: string;
-  availableIn: ('africa' | 'europe' | 'americas' | 'asia')[];
+  /** Short selling points shown as bullets. */
+  highlights: Localized<string[]>;
+  specs: Spec[];
+  /** Warranty length in months. */
+  warrantyMonths: number;
   inStock: boolean;
   stockCount: number;
   rating: number;
   reviewCount: number;
   soldCount: number;
+  /** Available at wholesale / bulk pricing. */
+  wholesale?: boolean;
   featured?: boolean;
   bestseller?: boolean;
   newArrival?: boolean;
   flashDeal?: boolean;
 };
 
-export type Artisan = {
+export type Category = {
   slug: string;
-  name: string;
-  country: string;
-  region: string;
-  craft: Localized;
-  bio: Localized;
-  quote: Localized;
-  photo: string;
-  yearsOfExperience: number;
-  productSlugs: string[];
-  signature: Localized;
-  pronouns?: 'she' | 'he' | 'they';
-};
-
-export type Story = {
-  slug: string;
-  title: Localized;
-  excerpt: Localized;
-  content: Localized;
+  name: Localized;
+  tagline: Localized;
+  description: Localized;
   cover: string;
-  category: Localized;
-  readTime: number;
-  publishedAt: string;
-};
-
-export type Deal = {
-  productSlug: string;
-  discount: number;
-  endsAt: string;
-  stockLeft: number;
+  /** lucide-react icon name. */
+  icon: string;
 };
 
 export type Review = {
   productSlug: string;
   author: string;
-  authorCountry: string;
+  authorCity: string;
   rating: number;
   date: string;
   comment: Localized;
   verified: boolean;
+};
+
+export type Deal = {
+  productSlug: string;
+  endsAt: string;
+};
+
+export type PaymentMethod = {
+  id: 'mtn-momo' | 'orange-money' | 'card' | 'paypal' | 'bank-transfer';
+  name: Localized;
+  blurb: Localized;
+  /** Hex accent for the method chip. */
+  color: string;
+};
+
+export type DeliveryZone = {
+  id: string;
+  label: Localized;
+  estimate: Localized;
 };

@@ -4,14 +4,10 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'plus.unsplash.com' },
-      { protocol: 'https', hostname: 'images.pexels.com' },
-      { protocol: 'https', hostname: 'cdn.pixabay.com' },
-      { protocol: 'https', hostname: 'burst.shopifycdn.com' },
-    ],
+  // Pin the Turbopack root to this project — avoids it being inferred from a
+  // parent directory when multiple lockfiles are present.
+  turbopack: {
+    root: process.cwd(),
   },
 };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu } from 'lucide-react';
+import { Menu, ChevronRight, Tag, Info, LayoutGrid } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import {
@@ -12,8 +12,8 @@ import {
   VisuallyHidden,
 } from '@/components/ui/Sheet';
 import { Logo } from '@/components/shared/Logo';
+import { CategoryIcon } from '@/components/shared/CategoryIcon';
 import { categories } from '@/data/categories';
-import { countries } from '@/data/countries';
 import { pickLocale } from '@/lib/utils';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import type { Locale } from '@/lib/types';
@@ -28,86 +28,70 @@ export function MobileMenu() {
         <button
           type="button"
           aria-label={t('menu')}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded hover:bg-ink/5"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg hover:bg-bone-deep"
         >
           <Menu className="h-5 w-5" />
         </button>
       </SheetTrigger>
-      <SheetContent side="left" className="overflow-y-auto p-6">
+      <SheetContent side="left" className="w-full max-w-xs overflow-y-auto p-0">
         <VisuallyHidden>
           <SheetTitle>{t('menu')}</SheetTitle>
         </VisuallyHidden>
-        <div className="flex items-center gap-2">
-          <Logo size={26} />
-          <span className="font-display text-2xl italic">AFRIMA</span>
+
+        <div className="border-b border-border px-5 py-5">
+          <Logo size={32} showText />
         </div>
 
-        <div className="mt-6 space-y-6">
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-clay">
-              {t('categories')}
-            </div>
-            <ul className="mt-2 space-y-1">
-              {categories.map((c) => (
-                <li key={c.slug}>
-                  <SheetClose asChild>
-                    <Link
-                      href={`/categories/${c.slug}`}
-                      className="block py-1.5 text-sm hover:text-clay"
-                    >
+        <div className="px-3 py-4">
+          <div className="px-2 font-mono text-[10px] uppercase tracking-[0.18em] text-clay">
+            {t('categories')}
+          </div>
+          <ul className="mt-2 space-y-0.5">
+            {categories.map((c) => (
+              <li key={c.slug}>
+                <SheetClose asChild>
+                  <Link
+                    href={`/categories/${c.slug}`}
+                    className="flex items-center gap-3 rounded-lg px-2 py-2.5 hover:bg-bone-deep"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-clay/10 text-clay">
+                      <CategoryIcon name={c.icon} size={18} />
+                    </span>
+                    <span className="flex-1 text-sm font-medium">
                       {pickLocale(c.name, locale)}
-                    </Link>
-                  </SheetClose>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    </span>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                  </Link>
+                </SheetClose>
+              </li>
+            ))}
+          </ul>
 
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-clay">
-              {t('countries')}
-            </div>
-            <ul className="mt-2 grid grid-cols-2 gap-1">
-              {countries.map((c) => (
-                <li key={c.slug}>
-                  <SheetClose asChild>
-                    <Link
-                      href={`/countries/${c.slug}`}
-                      className="flex items-center gap-2 py-1 text-sm hover:text-clay"
-                    >
-                      <span aria-hidden>{c.flag}</span>
-                      <span>{pickLocale(c.name, locale)}</span>
-                    </Link>
-                  </SheetClose>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="my-3 h-px bg-border" />
 
-          <div className="grid grid-cols-2 gap-1">
-            <SheetClose asChild>
-              <Link href="/artisans" className="block py-2 text-sm font-medium hover:text-clay">
-                {t('artisans')}
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link href="/culture" className="block py-2 text-sm font-medium hover:text-clay">
-                {t('stories')}
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link href="/deals" className="block py-2 text-sm font-medium hover:text-clay">
-                {t('deals')}
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link href="/about" className="block py-2 text-sm font-medium hover:text-clay">
-                {t('about')}
-              </Link>
-            </SheetClose>
-          </div>
+          <ul className="space-y-0.5">
+            {[
+              { href: '/categories', label: t('allProducts'), Icon: LayoutGrid },
+              { href: '/deals', label: t('deals'), Icon: Tag },
+              { href: '/about', label: t('about'), Icon: Info },
+            ].map(({ href, label, Icon }) => (
+              <li key={href}>
+                <SheetClose asChild>
+                  <Link
+                    href={href}
+                    className="flex items-center gap-3 rounded-lg px-2 py-2.5 text-sm font-medium hover:bg-bone-deep"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-bone-deep text-ink">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    {label}
+                  </Link>
+                </SheetClose>
+              </li>
+            ))}
+          </ul>
 
-          <div className="pt-4 border-t border-ink/10">
+          <div className="mt-4 border-t border-border px-2 pt-4">
             <LocaleSwitcher />
           </div>
         </div>

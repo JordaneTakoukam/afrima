@@ -17,6 +17,7 @@ export function AddToCartButton({
   fullWidth,
   iconOnly,
   qty = 1,
+  label,
 }: {
   product: Product;
   locale: Locale;
@@ -25,16 +26,19 @@ export function AddToCartButton({
   fullWidth?: boolean;
   iconOnly?: boolean;
   qty?: number;
+  label?: string;
 }) {
   const t = useTranslations('Product');
   const { add } = useCart();
   const [justAdded, setJustAdded] = useState(false);
+  const disabled = !product.inStock;
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (disabled) return;
     add(product.slug, qty);
-    toast.success(`${t('addedToCart')}: ${pickLocale(product.name, locale)}`);
+    toast.success(`${t('addedToast')} — ${pickLocale(product.name, locale)}`);
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 1600);
   };
@@ -44,11 +48,17 @@ export function AddToCartButton({
       onClick={handleClick}
       size={size}
       variant={variant}
+      disabled={disabled}
       className={fullWidth ? 'w-full' : ''}
       type="button"
     >
       {justAdded ? <Check /> : <ShoppingBag />}
-      {!iconOnly && (justAdded ? t('addedToCart') : t('addToCart'))}
+      {!iconOnly &&
+        (disabled
+          ? t('outOfStock')
+          : justAdded
+            ? t('added')
+            : (label ?? t('addToCart')))}
     </Button>
   );
 }
