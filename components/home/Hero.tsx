@@ -30,7 +30,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-clay/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-ochre/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-4 py-20 md:grid-cols-12 md:gap-8 md:px-8 md:py-28">
+      <div className="relative mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-4 py-14 md:grid-cols-12 md:gap-8 md:px-8 md:py-28">
         {/* Text */}
         <motion.div
           className="md:col-span-6"
@@ -94,12 +94,12 @@ export function Hero() {
         >
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             <div className="space-y-3 md:space-y-4">
-              <Tile src={IMG('photo-1496181133206-80ce9b88a853')} alt="Laptop" tall priority />
-              <Tile src={IMG('photo-1505740420928-5e560c06d30e')} alt="Headphones" />
+              <Tile src={IMG('photo-1555041469-a586c61ea9bc')} alt="Canapé & mobilier" tall priority />
+              <Tile src={IMG('queen-rishma-creme-1')} alt="Soins & beauté" />
             </div>
             <div className="space-y-3 pt-8 md:space-y-4">
               <Tile src={IMG('photo-1511707171634-5f897ff02aa9')} alt="Smartphone" priority />
-              <Tile src={IMG('photo-1593359677879-a4bb92f829d1')} alt="Smart TV" tall />
+              <Tile src={IMG('photo-1556911220-bff31c812dba')} alt="Cuisine & ustensiles" tall />
             </div>
           </div>
 

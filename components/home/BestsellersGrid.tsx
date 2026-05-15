@@ -17,7 +17,7 @@ export function BestsellersGrid() {
     .slice(0, 8);
 
   return (
-    <section className="mx-auto max-w-[1440px] px-4 py-20 md:px-8 md:py-28">
+    <section className="mx-auto max-w-[1440px] px-4 py-14 md:px-8 md:py-28">
       <SectionHeading
         kicker={t('kicker')}
         title={t('title')}

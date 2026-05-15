@@ -116,7 +116,7 @@ export function CartSheet({ children }: { children: React.ReactNode }) {
                         <button
                           type="button"
                           onClick={() => setQty(product.slug, qty - 1)}
-                          className="px-2 py-1 hover:bg-bone-deep"
+                          className="px-3 py-2 hover:bg-bone-deep"
                           aria-label="−"
                         >
                           <Minus className="h-3 w-3" />
@@ -130,7 +130,7 @@ export function CartSheet({ children }: { children: React.ReactNode }) {
                         <button
                           type="button"
                           onClick={() => setQty(product.slug, qty + 1)}
-                          className="px-2 py-1 hover:bg-bone-deep"
+                          className="px-3 py-2 hover:bg-bone-deep"
                           aria-label="+"
                         >
                           <Plus className="h-3 w-3" />

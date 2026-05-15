@@ -102,7 +102,7 @@ export function CartView({ locale }: { locale: Locale }) {
                     <button
                       type="button"
                       onClick={() => setQty(product.slug, qty - 1)}
-                      className="px-2.5 py-1.5 hover:bg-bone-deep"
+                      className="px-3.5 py-2.5 hover:bg-bone-deep"
                       aria-label="−"
                     >
                       <Minus className="h-3.5 w-3.5" />
@@ -116,7 +116,7 @@ export function CartView({ locale }: { locale: Locale }) {
                     <button
                       type="button"
                       onClick={() => setQty(product.slug, qty + 1)}
-                      className="px-2.5 py-1.5 hover:bg-bone-deep"
+                      className="px-3.5 py-2.5 hover:bg-bone-deep"
                       aria-label="+"
                     >
                       <Plus className="h-3.5 w-3.5" />

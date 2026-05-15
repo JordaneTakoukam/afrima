@@ -11,7 +11,7 @@ export function Newsletter() {
   const [email, setEmail] = useState('');
 
   return (
-    <section className="mx-auto max-w-[1440px] px-4 py-20 md:px-8 md:py-28">
+    <section className="mx-auto max-w-[1440px] px-4 py-14 md:px-8 md:py-28">
       <div className="overflow-hidden rounded-2xl bg-clay px-6 py-12 md:px-12 md:py-14">
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>

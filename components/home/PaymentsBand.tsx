@@ -9,7 +9,7 @@ export function PaymentsBand() {
 
   return (
     <section className="bg-ink text-bone">
-      <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-4 py-20 md:grid-cols-12 md:px-8 md:py-28">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-8 px-4 py-14 md:grid-cols-12 md:px-8 md:py-28">
         <div className="md:col-span-5">
           <div className="font-mono text-xs uppercase tracking-[0.2em] text-ochre">
             {t('kicker')}

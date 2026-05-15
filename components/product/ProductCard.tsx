@@ -76,7 +76,7 @@ export function ProductCard({
               price={product.price}
               originalPrice={product.originalPrice}
               locale={locale}
-              size="md"
+              size="sm"
             />
           </div>
         </div>

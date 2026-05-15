@@ -25,7 +25,7 @@ export function FlashDeals() {
 
   return (
     <section className="border-y border-border bg-clay/[0.04]">
-      <div className="mx-auto max-w-[1440px] px-4 py-20 md:px-8 md:py-28">
+      <div className="mx-auto max-w-[1440px] px-4 py-14 md:px-8 md:py-28">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-clay/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wide text-clay">

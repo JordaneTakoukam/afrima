@@ -22,7 +22,10 @@ export function PriceTag({
   }[size];
 
   return (
-    <div className={cn('inline-flex items-baseline gap-2 font-mono', className)} data-num>
+    <div
+      className={cn('flex flex-wrap items-baseline gap-x-2 gap-y-0.5 font-mono', className)}
+      data-num
+    >
       <span className={cn('font-semibold tabular-nums text-ink', sizes.price)}>
         {formatPrice(price, locale)}
       </span>
