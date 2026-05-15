@@ -33,7 +33,11 @@ export function MobileMenu() {
           <Menu className="h-5 w-5" />
         </button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-full max-w-xs overflow-y-auto p-0">
+      <SheetContent
+        side="left"
+        aria-describedby={undefined}
+        className="w-full max-w-xs overflow-y-auto p-0"
+      >
         <VisuallyHidden>
           <SheetTitle>{t('menu')}</SheetTitle>
         </VisuallyHidden>

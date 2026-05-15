@@ -39,6 +39,7 @@ export function SafeImage({
   fallbackSeed,
   fallbackKicker,
   className,
+  priority,
   ...props
 }: SafeImageProps) {
   const [errored, setErrored] = useState(false);
@@ -97,6 +98,10 @@ export function SafeImage({
       alt={alt}
       onError={() => setErrored(true)}
       className={className}
+      // next/image 16: an above-the-fold/LCP image is opted out of lazy
+      // loading with loading="eager" + fetchPriority="high".
+      loading={priority ? 'eager' : undefined}
+      fetchPriority={priority ? 'high' : undefined}
       {...props}
     />
   );

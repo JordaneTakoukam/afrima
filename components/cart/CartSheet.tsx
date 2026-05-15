@@ -35,6 +35,7 @@ export function CartSheet({ children }: { children: React.ReactNode }) {
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent
         side="right"
+        aria-describedby={undefined}
         className="flex w-full flex-col overflow-hidden p-0 sm:max-w-md md:max-w-lg"
       >
         <div className="flex items-center gap-3 border-b border-border px-6 py-4 pr-14">
