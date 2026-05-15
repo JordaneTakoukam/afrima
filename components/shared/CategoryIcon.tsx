@@ -5,6 +5,7 @@ import {
   Refrigerator,
   CookingPot,
   ShowerHead,
+  Sparkles,
   Sofa,
   Package,
 } from 'lucide-react';
@@ -16,6 +17,7 @@ const MAP = {
   appliances: Refrigerator,
   kitchen: CookingPot,
   bathroom: ShowerHead,
+  beaute: Sparkles,
   home: Sofa,
 } as const;
 

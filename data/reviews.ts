@@ -241,6 +241,42 @@ export const reviews: Review[] = [
     },
     verified: true,
   },
+  {
+    productSlug: 'queen-rishma-creme-capillaire',
+    author: 'Larissa M.',
+    authorCity: 'Douala',
+    rating: 5,
+    date: '2026-05-06',
+    comment: {
+      en: 'My hair drinks it up. Three weeks in, less breakage and real shine. Will reorder.',
+      fr: 'Mes cheveux la boivent. Trois semaines après, moins de casse et une vraie brillance. Je recommanderai.',
+    },
+    verified: true,
+  },
+  {
+    productSlug: 'savon-noir-africain',
+    author: 'Boutique Éclat',
+    authorCity: 'Yaoundé',
+    rating: 5,
+    date: '2026-04-29',
+    comment: {
+      en: 'Bought a carton for the shop. Genuine black soap — customers keep coming back for it.',
+      fr: 'Commandé un carton pour la boutique. Du vrai savon noir — les clientes reviennent pour ça.',
+    },
+    verified: true,
+  },
+  {
+    productSlug: 'beurre-karite-brut',
+    author: 'Nadège T.',
+    authorCity: 'Bafoussam',
+    rating: 5,
+    date: '2026-05-08',
+    comment: {
+      en: 'Pure, unrefined, exactly as described. Great on dry skin and on the ends of my hair.',
+      fr: 'Pur, non raffiné, exactement comme décrit. Parfait sur la peau sèche et les pointes de mes cheveux.',
+    },
+    verified: true,
+  },
 ];
 
 export function getReviewsForProduct(slug: string) {

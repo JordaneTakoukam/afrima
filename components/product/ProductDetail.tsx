@@ -15,6 +15,7 @@ import {
   Check,
   ChevronRight,
   Boxes,
+  Sparkles,
 } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/Tabs';
@@ -257,7 +258,14 @@ export function ProductDetail({
             {/* Trust grid */}
             <div className="mt-6 grid grid-cols-2 gap-3 rounded-xl border border-border bg-surface p-4">
               <Trust Icon={Truck} text={t('deliveryFast')} />
-              <Trust Icon={ShieldCheck} text={t('warranty', { count: product.warrantyMonths })} />
+              {product.warrantyMonths > 0 ? (
+                <Trust
+                  Icon={ShieldCheck}
+                  text={t('warranty', { count: product.warrantyMonths })}
+                />
+              ) : (
+                <Trust Icon={Sparkles} text={t('naturalProduct')} />
+              )}
               <Trust Icon={CreditCard} text={t('securePayment')} />
               <Trust Icon={BadgeCheck} text={t('genuine')} />
             </div>
@@ -333,12 +341,14 @@ export function ProductDetail({
                     <dd className="w-1/2 font-medium text-ink">{s.value}</dd>
                   </div>
                 ))}
-                <div className="flex items-baseline gap-4 bg-surface px-4 py-3 text-sm">
-                  <dt className="w-1/2 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
-                    {t('warranty', { count: product.warrantyMonths })}
-                  </dt>
-                  <dd className="w-1/2 font-medium text-ink">{product.brand}</dd>
-                </div>
+                {product.warrantyMonths > 0 ? (
+                  <div className="flex items-baseline gap-4 bg-surface px-4 py-3 text-sm">
+                    <dt className="w-1/2 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+                      {t('warranty', { count: product.warrantyMonths })}
+                    </dt>
+                    <dd className="w-1/2 font-medium text-ink">{product.brand}</dd>
+                  </div>
+                ) : null}
               </dl>
             </TabsContent>
 

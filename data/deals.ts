@@ -17,4 +17,5 @@ export const deals: Deal[] = [
   { productSlug: 'hp-250-g9', endsAt: inHours(40) },
   { productSlug: 'corner-sofa-5-seat', endsAt: inHours(46) },
   { productSlug: 'chauffe-eau-instantane', endsAt: inHours(9) },
+  { productSlug: 'savon-noir-africain', endsAt: inHours(5) },
 ];

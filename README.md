@@ -3,11 +3,11 @@
 > **Electronics & home goods at wholesale prices.**
 > *Ordered online, delivered across Cameroon and Africa.*
 
-A portfolio-grade demo of a modern online store for **electronics and home goods** — phones, laptops, TVs, appliances, kitchenware and furniture — built for the Cameroonian and African market. Full shopping flow: browse → cart → quantity → checkout → order confirmation.
+A portfolio-grade demo of a modern online store for **electronics, home & beauty** — phones, laptops, TVs, appliances, kitchenware, bathroom fittings, furniture and natural beauty care — built for the Cameroonian and African market. Full shopping flow: browse → cart → quantity → checkout → order confirmation.
 
 ## ✨ What's inside
 
-- 🛒 **6 departments**, **42 products** — phones, computers, TV & audio, appliances, kitchen, furniture
+- 🛒 **8 departments**, **57 products** — phones, computers, TV & audio, appliances, kitchen, bathroom, furniture, beauty & care
 - 💳 **Functional checkout** — cart with quantities, delivery details, payment method selection, order confirmation
 - 📱 **Payments** — MTN MoMo, Orange Money, Visa / Mastercard, PayPal, bank transfer
 - 🚚 **Delivery** — Cameroon in 1–4 days, the rest of Africa within 3 weeks
@@ -104,7 +104,7 @@ Co-creator: **Magne Takoukam Chloé Martine** · Built by **Idriss Jordane** · 
 
 ## 🇫🇷 À propos
 
-AFRIMA est une démo de boutique en ligne d'**électronique et d'équipement maison** pour le marché camerounais et africain — téléphones, ordinateurs, TV, électroménager, cuisine et mobilier. Le parcours d'achat complet est fonctionnel : navigation → panier → quantité → paiement → confirmation de commande.
+AFRIMA est une démo de boutique en ligne d'**électronique, maison & beauté** pour le marché camerounais et africain — téléphones, ordinateurs, TV, électroménager, cuisine, salle de bain, mobilier et soins beauté naturels. Le parcours d'achat complet est fonctionnel : navigation → panier → quantité → paiement → confirmation de commande.
 
 Paiement par MTN MoMo, Orange Money, Visa / Mastercard, PayPal ou virement bancaire. Prix en FCFA. Bilingue FR (par défaut) / EN, construit avec Next.js 16, Tailwind v4, framer-motion et next-intl.
 

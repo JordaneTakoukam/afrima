@@ -101,6 +101,20 @@ export const categories: Category[] = [
     cover: IMG('photo-1586023492125-27b2c045efd7'),
     icon: 'home',
   },
+  {
+    slug: 'beaute',
+    name: { en: 'Beauty & Care', fr: 'Beauté & Soins' },
+    tagline: {
+      en: 'Hair care, soaps, oils & natural skincare',
+      fr: 'Soins capillaires, savons, huiles & soins naturels',
+    },
+    description: {
+      en: 'Natural beauty and body care — artisanal hair products, African black soap, raw shea butter and pure oils.',
+      fr: 'Beauté naturelle et soins du corps — produits capillaires artisanaux, savon noir africain, beurre de karité brut et huiles pures.',
+    },
+    cover: IMG('queen-rishma-creme-1'),
+    icon: 'beaute',
+  },
 ];
 
 export const categoriesBySlug: Record<string, Category> = Object.fromEntries(
