@@ -20,6 +20,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time client hydration from localStorage
       if (raw) setItems(JSON.parse(raw));
     } catch {}
     setReady(true);

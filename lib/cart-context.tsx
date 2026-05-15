@@ -72,6 +72,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const saved = window.localStorage.getItem(KEY);
       if (saved) dispatch({ type: 'load', state: JSON.parse(saved) });
     } catch {}
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time client hydration from localStorage
     setReady(true);
   }, []);
 

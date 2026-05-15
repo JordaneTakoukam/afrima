@@ -21,6 +21,7 @@ export function CountdownTimer({
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- mount-only clock start, avoids an SSR hydration mismatch
     setNow(new Date());
     const i = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(i);
