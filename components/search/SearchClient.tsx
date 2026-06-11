@@ -9,7 +9,7 @@ import { categoriesBySlug } from '@/data/categories';
 import { pickLocale } from '@/lib/utils';
 import type { Locale } from '@/lib/types';
 
-const TRENDING = ['iPhone', 'Samsung', 'Tecno', 'JBL', 'Hisense', 'Nasco', 'Tefal', 'Laptop'];
+const TRENDING = ['Pagne', 'Boubou', 'NDOP', 'Karité', 'Savon noir', 'Raphia', 'Café', 'Toghu'];
 
 export function SearchClient({
   initialQuery,

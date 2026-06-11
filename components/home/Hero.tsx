@@ -7,7 +7,7 @@ import { ArrowRight, Truck, CreditCard, ShieldCheck, Star } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/Button';
 
-const IMG = (id: string) => `/products/${id}.jpg`;
+const IMG = (id: string) => `/catalog/${id}.jpg`;
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const stagger = { animate: { transition: { staggerChildren: 0.09 } } };
@@ -94,12 +94,12 @@ export function Hero() {
         >
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             <div className="space-y-3 md:space-y-4">
-              <Tile src={IMG('photo-1555041469-a586c61ea9bc')} alt="Canapé & mobilier" tall priority />
-              <Tile src={IMG('queen-rishma-creme-1')} alt="Soins & beauté" />
+              <Tile src={IMG('boubou-femme-1')} alt="Mode & textiles africains" tall priority />
+              <Tile src={IMG('queen-rishma-creme-1')} alt="Beauté & soins naturels" />
             </div>
             <div className="space-y-3 pt-8 md:space-y-4">
-              <Tile src={IMG('photo-1511707171634-5f897ff02aa9')} alt="Smartphone" priority />
-              <Tile src={IMG('photo-1556911220-bff31c812dba')} alt="Cuisine & ustensiles" tall />
+              <Tile src={IMG('sac-ndop-1')} alt="Artisanat & art africain" priority />
+              <Tile src={IMG('decor-raphia-set')} alt="Maison & décoration" tall />
             </div>
           </div>
 

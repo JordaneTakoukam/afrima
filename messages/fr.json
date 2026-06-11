@@ -1,12 +1,12 @@
 {
   "Brand": {
     "name": "AFRIMA",
-    "tagline": "L'électronique & la maison, livrées."
+    "tagline": "La culture, l'artisanat & les saveurs d'Afrique — livrés."
   },
   "PromoBar": {
     "delivery": "Livraison offerte dès 150 000 FCFA",
     "payment": "Payez par MTN MoMo, Orange Money, carte ou PayPal",
-    "warranty": "Garantie incluse sur chaque produit",
+    "warranty": "Produits africains authentiques et faits main",
     "wholesale": "Prix de gros & détail",
     "support": "Service client 7j/7",
     "returns": "Retours faciles sous 7 jours"
@@ -28,28 +28,28 @@
     "shopAll": "Voir tous les produits"
   },
   "Hero": {
-    "kicker": "Électronique · Maison · Beauté",
-    "titleA": "Tout ce qu'il vous faut",
-    "titleB": "à prix de gros",
-    "subtitle": "Commandez en ligne et faites-vous livrer partout au Cameroun et en Afrique — payez avec Mobile Money, carte ou PayPal.",
+    "kicker": "Textiles · Artisanat · Beauté · Terroir",
+    "titleA": "Le meilleur de l'Afrique,",
+    "titleB": "authentique & fait main",
+    "subtitle": "Textiles traditionnels, artisanat, beauté naturelle et gastronomie — sourcés chez nos artisans et livrés partout en Afrique et dans la diaspora.",
     "ctaShop": "Découvrir la boutique",
     "ctaDeals": "Promos du jour",
-    "feature1": "Livré partout en Afrique",
+    "feature1": "Livré en Afrique & dans la diaspora",
     "feature2": "MTN MoMo · Orange Money · Carte",
-    "feature3": "Garantie sur chaque article"
+    "feature3": "Authentique, fait main"
   },
   "Trust": {
-    "items": "LIVRAISON OFFERTE DÈS 150 000 FCFA — MTN MOMO & ORANGE MONEY — PRODUITS AUTHENTIQUES — GARANTIE INCLUSE — GROS & DÉTAIL — LIVRÉ PARTOUT EN AFRIQUE"
+    "items": "LIVRAISON OFFERTE DÈS 150 000 FCFA — MTN MOMO & ORANGE MONEY — PRODUITS AUTHENTIQUES — MADE IN AFRICA — FAIT MAIN PAR DES ARTISANS — LIVRÉ EN AFRIQUE & DANS LA DIASPORA"
   },
   "Categories": {
     "kicker": "Acheter par rayon",
-    "title": "Trouvez plus vite",
-    "subtitle": "Six rayons, du smartphone au canapé — tout est livré chez vous.",
+    "title": "Explorez la culture",
+    "subtitle": "Six univers, du textile tissé à la beauté naturelle — chaque pièce ancrée dans l'héritage africain.",
     "explore": "Explorer"
   },
   "CategoriesPage": {
     "title": "Toutes les catégories",
-    "subtitle": "Parcourez toute la gamme AFRIMA — l'électronique et tout pour la maison.",
+    "subtitle": "Parcourez toute la gamme AFRIMA — textiles, artisanat, beauté, terroir et déco d'Afrique.",
     "productCount": "{count} produits"
   },
   "Deals": {
@@ -85,13 +85,13 @@
   },
   "ValueProps": {
     "deliveryTitle": "Livré partout en Afrique",
-    "deliveryBody": "Le Cameroun en 1 à 4 jours, le reste du continent sous 3 semaines.",
+    "deliveryBody": "Le Cameroun en 1 à 4 jours, le reste du continent et la diaspora sous 3 semaines.",
     "paymentTitle": "Payez comme vous voulez",
     "paymentBody": "Mobile Money, cartes, PayPal ou virement bancaire — tout est sécurisé.",
-    "warrantyTitle": "Garantie incluse",
-    "warrantyBody": "Chaque produit est authentique et couvert par une garantie constructeur.",
+    "warrantyTitle": "Authentique & fait main",
+    "warrantyBody": "Chaque pièce est sourcée chez des artisans africains — authentique, traditionnelle et équitable.",
     "wholesaleTitle": "Le gros est bienvenu",
-    "wholesaleBody": "Commandez à l'unité ou au carton — tarifs de gros sur de nombreux articles."
+    "wholesaleBody": "Commandez à l'unité ou au lot — tarifs de gros pour les boutiques et la diaspora."
   },
   "Payments": {
     "kicker": "Paiement sécurisé",
@@ -108,7 +108,7 @@
     "success": "C'est fait — surveillez votre boîte mail."
   },
   "Footer": {
-    "tagline": "L'électronique et l'équipement maison à prix de gros, livrés au Cameroun et en Afrique.",
+    "tagline": "Textiles, artisanat, beauté et terroir africains authentiques — livrés en Afrique et dans la diaspora.",
     "shop": "Boutique",
     "company": "Entreprise",
     "help": "Aide",
@@ -121,7 +121,7 @@
     "faq": "FAQ",
     "delivery": "Livraison & suivi",
     "returns": "Retours",
-    "warranty": "Garantie",
+    "warranty": "Authenticité",
     "wholesale": "Commandes en gros",
     "terms": "Conditions de vente",
     "privacy": "Confidentialité",
@@ -151,7 +151,7 @@
     "freeDelivery": "Livraison offerte",
     "deliveryFast": "Livré en 1 à 4 jours au Cameroun",
     "securePayment": "Paiement sécurisé",
-    "genuine": "Produit authentique",
+    "genuine": "Authentique & fait main",
     "naturalProduct": "100% naturel",
     "highlightsTitle": "Points forts",
     "descriptionTab": "Description",
@@ -166,7 +166,7 @@
     "shareCopied": "Lien copié",
     "breadcrumbHome": "Accueil",
     "wholesaleTitle": "Disponible en gros",
-    "wholesaleBody": "Vous achetez en quantité pour une boutique ou une entreprise ? Commandez au carton à prix de gros.",
+    "wholesaleBody": "Vous achetez en quantité pour une boutique, une entreprise ou la diaspora ? Commandez au lot à prix de gros.",
     "paymentLine": "MTN MoMo · Orange Money · Visa · Mastercard · PayPal"
   },
   "Category": {
@@ -185,7 +185,7 @@
   "Cart": {
     "title": "Votre panier",
     "empty": "Votre panier est vide.",
-    "emptySub": "Ajoutez de l'électronique ou de l'équipement maison pour commencer.",
+    "emptySub": "Ajoutez du textile, de l'artisanat ou de la beauté naturelle pour commencer.",
     "emptyCta": "Commencer mes achats",
     "subtotal": "Sous-total",
     "shipping": "Livraison",
@@ -257,23 +257,23 @@
   },
   "About": {
     "kicker": "À propos de AFRIMA",
-    "title": "Votre boutique électronique & maison de confiance",
-    "subtitle": "Nous rendons simple l'achat d'électronique et d'équipement maison authentiques en ligne — à prix de gros, avec une livraison fiable.",
+    "title": "La marketplace panafricaine de la culture authentique",
+    "subtitle": "AFRIMA réunit les textiles, l'artisanat, la beauté naturelle et la gastronomie d'Afrique — sourcés chez les artisans et producteurs, livrés partout en Afrique et dans la diaspora.",
     "missionTitle": "Pourquoi nous existons",
-    "missionBody": "Acheter de l'électronique et de l'électroménager de qualité au Cameroun, c'est souvent des prix incertains, des produits du marché gris et aucune garantie. AFRIMA change la donne : un prix clair, des produits authentiques, une vraie garantie, et une livraison à domicile — que vous commandiez un seul téléphone ou un carton entier pour votre boutique.",
-    "stat1Value": "1–4",
-    "stat1Label": "jours de livraison au Cameroun",
-    "stat2Value": "23",
-    "stat2Label": "pays africains livrés",
+    "missionBody": "Les produits africains authentiques sont difficiles à trouver en ligne — et plus encore pour la diaspora. Trop souvent ce sont des imitations, sans lien avec ceux qui les fabriquent. AFRIMA change la donne : de vrais textiles, du vrai artisanat, du vrai terroir et de la vraie beauté, chaque pièce reliée à l'artisan qui l'a créée. Nous offrons aux créateurs africains une vitrine mondiale, et à chacun, partout, un moyen de confiance d'emporter un morceau de chez soi.",
+    "stat1Value": "23",
+    "stat1Label": "pays africains sourcés",
+    "stat2Value": "6",
+    "stat2Label": "univers de culture, d'artisanat & de terroir",
     "stat3Value": "100%",
-    "stat3Label": "produits authentiques et garantis",
+    "stat3Label": "produits authentiques et faits main",
     "valuesTitle": "Nos engagements",
-    "value1Title": "Des prix honnêtes",
-    "value1Body": "Prix de gros et de détail affichés clairement — aucune surprise au paiement.",
-    "value2Title": "Produits authentiques",
-    "value2Body": "Des produits scellés et originaux, avec une garantie constructeur sur chaque commande.",
+    "value1Title": "L'authenticité d'abord",
+    "value1Body": "Chaque pièce est authentique, traditionnelle et reliée à son créateur — jamais une imitation.",
+    "value2Title": "Justes envers les artisans",
+    "value2Body": "Nous travaillons directement avec les créateurs et producteurs africains, à des prix qui respectent leur savoir-faire.",
     "value3Title": "Livraison fiable",
-    "value3Body": "Une livraison suivie partout au Cameroun et dans le reste de l'Afrique.",
+    "value3Body": "Une livraison suivie au Cameroun, dans le reste de l'Afrique et dans la diaspora.",
     "value4Title": "Un vrai service",
     "value4Body": "Une équipe joignable 7j/7, avant et après votre achat.",
     "contactTitle": "Besoin d'aide ?",

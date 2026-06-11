@@ -4,8 +4,8 @@ export const SITE = {
   name: 'AFRIMA',
   url: 'https://afrima.vercel.app',
   description: {
-    en: 'Electronics & home goods at wholesale prices — ordered online, delivered across Cameroon and Africa.',
-    fr: "Électronique & équipement maison à prix de gros — commandé en ligne, livré au Cameroun et partout en Afrique.",
+    en: 'The pan-African marketplace for authentic culture, craft and food — textiles, art, natural beauty and gastronomy, delivered across Africa and the diaspora.',
+    fr: "La marketplace panafricaine de la culture, de l'artisanat et du terroir authentiques — textiles, art, beauté naturelle et gastronomie, livrés en Afrique et dans la diaspora.",
   } satisfies Localized,
 } as const;
 

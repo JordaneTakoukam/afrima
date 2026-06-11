@@ -1,24 +1,20 @@
 import {
-  Smartphone,
-  Laptop,
-  Tv,
-  Refrigerator,
-  CookingPot,
-  ShowerHead,
+  Shirt,
+  Palette,
   Sparkles,
-  Sofa,
+  Utensils,
+  Armchair,
+  Drum,
   Package,
 } from 'lucide-react';
 
 const MAP = {
-  phones: Smartphone,
-  computers: Laptop,
-  tv: Tv,
-  appliances: Refrigerator,
-  kitchen: CookingPot,
-  bathroom: ShowerHead,
+  textiles: Shirt,
+  artisanat: Palette,
   beaute: Sparkles,
-  home: Sofa,
+  gastronomie: Utensils,
+  maison: Armchair,
+  culture: Drum,
 } as const;
 
 /** Renders the lucide icon for a category's `icon` key. */

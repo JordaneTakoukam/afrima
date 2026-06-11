@@ -1,12 +1,12 @@
 {
   "Brand": {
     "name": "AFRIMA",
-    "tagline": "Electronics & home, delivered."
+    "tagline": "African culture, craft & flavour — delivered."
   },
   "PromoBar": {
     "delivery": "Free delivery over 150,000 FCFA",
     "payment": "Pay by MTN MoMo, Orange Money, card or PayPal",
-    "warranty": "Warranty included on every product",
+    "warranty": "Authentic, hand-made African products",
     "wholesale": "Wholesale & retail prices",
     "support": "Customer support 7 days a week",
     "returns": "7-day easy returns"
@@ -28,28 +28,28 @@
     "shopAll": "Shop all products"
   },
   "Hero": {
-    "kicker": "Electronics · Home · Beauty",
-    "titleA": "Everything you need",
-    "titleB": "at wholesale prices",
-    "subtitle": "Order online and get it delivered anywhere in Cameroon and across Africa — pay with Mobile Money, card or PayPal.",
+    "kicker": "Textiles · Craft · Beauty · Food",
+    "titleA": "The best of Africa,",
+    "titleB": "authentic & hand-made",
+    "subtitle": "Traditional textiles, craft, natural beauty and gastronomy — sourced from our artisans and delivered across Africa and the diaspora.",
     "ctaShop": "Shop now",
     "ctaDeals": "Today's deals",
-    "feature1": "Delivered across Africa",
+    "feature1": "Delivered across Africa & the diaspora",
     "feature2": "MTN MoMo · Orange Money · Card",
-    "feature3": "Warranty on every item"
+    "feature3": "Authentic, hand-made"
   },
   "Trust": {
-    "items": "FREE DELIVERY OVER 150,000 FCFA — MTN MOMO & ORANGE MONEY — GENUINE PRODUCTS — WARRANTY INCLUDED — WHOLESALE & RETAIL — DELIVERED ACROSS AFRICA"
+    "items": "FREE DELIVERY OVER 150,000 FCFA — MTN MOMO & ORANGE MONEY — AUTHENTIC PRODUCTS — MADE IN AFRICA — HAND-MADE BY ARTISANS — DELIVERED ACROSS AFRICA & THE DIASPORA"
   },
   "Categories": {
     "kicker": "Shop by category",
-    "title": "Find it faster",
-    "subtitle": "Six departments, from smartphones to sofas — all delivered to your door.",
+    "title": "Explore the culture",
+    "subtitle": "Six worlds, from woven textiles to natural beauty — every piece rooted in African heritage.",
     "explore": "Explore"
   },
   "CategoriesPage": {
     "title": "All categories",
-    "subtitle": "Browse the full AFRIMA range — electronics and everything for the home.",
+    "subtitle": "Browse the full AFRIMA range — African textiles, craft, beauty, food and décor.",
     "productCount": "{count} products"
   },
   "Deals": {
@@ -85,13 +85,13 @@
   },
   "ValueProps": {
     "deliveryTitle": "Delivered across Africa",
-    "deliveryBody": "Cameroon in 1–4 days, the rest of the continent within 3 weeks.",
+    "deliveryBody": "Cameroon in 1–4 days, the rest of the continent and the diaspora within 3 weeks.",
     "paymentTitle": "Pay your way",
     "paymentBody": "Mobile Money, cards, PayPal or bank transfer — all secured.",
-    "warrantyTitle": "Warranty included",
-    "warrantyBody": "Every product is genuine and covered by a manufacturer warranty.",
+    "warrantyTitle": "Authentic & hand-made",
+    "warrantyBody": "Every piece is sourced from African artisans — genuine, traditional and fairly traded.",
     "wholesaleTitle": "Wholesale welcome",
-    "wholesaleBody": "Order by the unit or by the carton — bulk pricing on many items."
+    "wholesaleBody": "Order by the unit or by the lot — bulk pricing for shops and the diaspora."
   },
   "Payments": {
     "kicker": "Secure payment",
@@ -108,7 +108,7 @@
     "success": "You're in — watch your inbox."
   },
   "Footer": {
-    "tagline": "Electronics and home goods at wholesale prices, delivered across Cameroon and Africa.",
+    "tagline": "Authentic African textiles, craft, beauty and food — delivered across Africa and to the diaspora.",
     "shop": "Shop",
     "company": "Company",
     "help": "Help",
@@ -121,7 +121,7 @@
     "faq": "FAQ",
     "delivery": "Delivery & tracking",
     "returns": "Returns",
-    "warranty": "Warranty",
+    "warranty": "Authenticity",
     "wholesale": "Wholesale orders",
     "terms": "Terms of sale",
     "privacy": "Privacy policy",
@@ -151,7 +151,7 @@
     "freeDelivery": "Free delivery",
     "deliveryFast": "Delivered in 1–4 days in Cameroon",
     "securePayment": "Secure payment",
-    "genuine": "Genuine product",
+    "genuine": "Authentic & hand-made",
     "naturalProduct": "100% natural",
     "highlightsTitle": "Highlights",
     "descriptionTab": "Description",
@@ -166,7 +166,7 @@
     "shareCopied": "Link copied to clipboard",
     "breadcrumbHome": "Home",
     "wholesaleTitle": "Available at wholesale",
-    "wholesaleBody": "Buying in bulk for a shop or business? Order by the carton at wholesale prices.",
+    "wholesaleBody": "Buying in bulk for a shop, a business or the diaspora? Order by the lot at wholesale prices.",
     "paymentLine": "MTN MoMo · Orange Money · Visa · Mastercard · PayPal"
   },
   "Category": {
@@ -185,7 +185,7 @@
   "Cart": {
     "title": "Your cart",
     "empty": "Your cart is empty.",
-    "emptySub": "Add some electronics or home goods to get started.",
+    "emptySub": "Add some textiles, craft or natural beauty to get started.",
     "emptyCta": "Start shopping",
     "subtotal": "Subtotal",
     "shipping": "Delivery",
@@ -257,23 +257,23 @@
   },
   "About": {
     "kicker": "About AFRIMA",
-    "title": "Your trusted electronics & home store",
-    "subtitle": "We make it easy to buy genuine electronics and home goods online — at wholesale prices, with delivery you can count on.",
+    "title": "The pan-African marketplace for authentic culture",
+    "subtitle": "AFRIMA brings together African textiles, craft, natural beauty and gastronomy — sourced from artisans and producers, delivered across Africa and to the diaspora.",
     "missionTitle": "Why we exist",
-    "missionBody": "Buying quality electronics and appliances in Cameroon often means uncertain prices, grey-market products and no warranty. AFRIMA fixes that: one clear price, genuine products, a real warranty, and delivery to your door — whether you order a single phone or a full carton for your shop.",
-    "stat1Value": "1–4",
-    "stat1Label": "days delivery within Cameroon",
-    "stat2Value": "23",
-    "stat2Label": "African countries we ship to",
+    "missionBody": "Authentic African products are hard to find online — and harder still for the diaspora. Too often they are imitations, with no link to the makers. AFRIMA changes that: real textiles, real craft, real food and beauty, each piece traced back to the artisan who made it. We give African makers a global storefront, and we give buyers everywhere a trusted way to bring a piece of home with them.",
+    "stat1Value": "23",
+    "stat1Label": "African countries we source from",
+    "stat2Value": "6",
+    "stat2Label": "worlds of culture, craft & flavour",
     "stat3Value": "100%",
-    "stat3Label": "genuine, warrantied products",
+    "stat3Label": "authentic, hand-made products",
     "valuesTitle": "What we stand for",
-    "value1Title": "Honest pricing",
-    "value1Body": "Wholesale and retail prices shown up front — no surprises at checkout.",
-    "value2Title": "Genuine products",
-    "value2Body": "Sealed, original products with a manufacturer warranty on every order.",
+    "value1Title": "Authenticity first",
+    "value1Body": "Every piece is genuine, traditional and traced back to its maker — never an imitation.",
+    "value2Title": "Fair to artisans",
+    "value2Body": "We work directly with African makers and producers, at prices that respect their craft.",
     "value3Title": "Reliable delivery",
-    "value3Body": "Tracked delivery across Cameroon and the rest of Africa.",
+    "value3Body": "Tracked delivery across Cameroon, the rest of Africa and the diaspora.",
     "value4Title": "Real support",
     "value4Body": "A team you can reach 7 days a week, before and after your purchase.",
     "contactTitle": "Need a hand?",

@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-export const alt = 'AFRIMA — Electronics & home, delivered across Africa';
+export const alt = 'AFRIMA — Authentic African culture, craft & flavour, delivered across Africa';
 
 export default function OG() {
   return new ImageResponse(
@@ -71,8 +71,8 @@ export default function OG() {
             letterSpacing: -2,
           }}
         >
-          <span>Electronics &amp; home goods</span>
-          <span style={{ color: '#f59e0b' }}>at wholesale prices.</span>
+          <span>The best of Africa,</span>
+          <span style={{ color: '#f59e0b' }}>authentic &amp; hand-made.</span>
         </div>
 
         <div

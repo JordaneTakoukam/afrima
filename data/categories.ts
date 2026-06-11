@@ -1,119 +1,91 @@
 import type { Category } from '@/lib/types';
 
-const IMG = (id: string) => `/products/${id}.jpg`;
+const IMG = (id: string) => `/catalog/${id}.jpg`;
 
 export const categories: Category[] = [
   {
-    slug: 'phones-tablets',
-    name: { en: 'Phones & Tablets', fr: 'Téléphones & Tablettes' },
+    slug: 'textiles',
+    name: { en: 'Fashion & Textiles', fr: 'Mode & Textiles' },
     tagline: {
-      en: 'Smartphones, tablets & accessories',
-      fr: 'Smartphones, tablettes & accessoires',
+      en: 'Traditional outfits, woven fabrics & embroidery',
+      fr: 'Tenues traditionnelles, tissus tissés & broderies',
     },
     description: {
-      en: 'The latest Tecno, Samsung, iPhone, Infinix and Itel — sealed, warrantied and ready to ship.',
-      fr: 'Les derniers Tecno, Samsung, iPhone, Infinix et Itel — scellés, garantis et prêts à expédier.',
+      en: 'African fashion and authentic textiles — toghu, ndop, woven pagne, embroidered boubous and ceremonial outfits, hand-made by our artisans.',
+      fr: 'La mode africaine et les textiles authentiques — toghu, ndop, pagne tissé, boubous brodés et tenues de cérémonie, faits main par nos artisans.',
     },
-    cover: IMG('photo-1598327105666-5b89351aff97'),
-    icon: 'phones',
+    cover: IMG('pagne-traditionnel-1'),
+    icon: 'textiles',
   },
   {
-    slug: 'computers',
-    name: { en: 'Computers & Office', fr: 'Informatique & Bureautique' },
+    slug: 'artisanat',
+    name: { en: 'Crafts & Art', fr: 'Artisanat & Art' },
     tagline: {
-      en: 'Laptops, monitors, printers & peripherals',
-      fr: 'PC portables, écrans, imprimantes & périphériques',
+      en: 'Bags, carved wood, fans & handmade objects',
+      fr: 'Sacs, bois sculpté, éventails & objets faits main',
     },
     description: {
-      en: 'Work-ready laptops and office gear from HP, Dell, Lenovo and Apple — built to last.',
-      fr: "PC portables et matériel de bureau prêts à l'emploi : HP, Dell, Lenovo et Apple — faits pour durer.",
+      en: 'African craft and art — ndop leather bags, hand-carved wooden utensils, woven fans and decorative objects that carry real cultural heritage.',
+      fr: "L'artisanat et l'art africains — sacs en cuir ndop, ustensiles en bois sculpté, éventails tressés et objets décoratifs porteurs d'un véritable héritage culturel.",
     },
-    cover: IMG('photo-1547082299-de196ea013d6'),
-    icon: 'computers',
-  },
-  {
-    slug: 'tv-audio',
-    name: { en: 'TV, Audio & Photo', fr: 'TV, Audio & Photo' },
-    tagline: {
-      en: 'Smart TVs, speakers, headphones & cameras',
-      fr: 'TV connectées, enceintes, casques & appareils photo',
-    },
-    description: {
-      en: 'Bring the cinema home — 4K smart TVs, JBL sound systems and Canon cameras.',
-      fr: 'Le cinéma à la maison — TV 4K connectées, systèmes son JBL et appareils Canon.',
-    },
-    cover: IMG('photo-1593359677879-a4bb92f829d1'),
-    icon: 'tv',
-  },
-  {
-    slug: 'appliances',
-    name: { en: 'Home Appliances', fr: 'Électroménager' },
-    tagline: {
-      en: 'Fridges, air conditioners, washers & cookers',
-      fr: 'Réfrigérateurs, climatiseurs, lave-linge & cuisinières',
-    },
-    description: {
-      en: 'The big appliances that keep a home running — Nasco, Hisense, LG and Binatone.',
-      fr: 'Le gros électroménager qui fait tourner une maison — Nasco, Hisense, LG et Binatone.',
-    },
-    cover: IMG('photo-1571175443880-49e1d25b2bc5'),
-    icon: 'appliances',
-  },
-  {
-    slug: 'kitchen',
-    name: { en: 'Kitchen & Cookware', fr: 'Cuisine & Ustensiles' },
-    tagline: {
-      en: 'Blenders, kettles, cookware & small appliances',
-      fr: 'Blenders, bouilloires, casseroles & petit électroménager',
-    },
-    description: {
-      en: 'Everything for the kitchen — sold by the unit or by the carton at wholesale prices.',
-      fr: "Tout pour la cuisine — à l'unité ou au carton, à prix de gros.",
-    },
-    cover: IMG('photo-1556911220-bff31c812dba'),
-    icon: 'kitchen',
-  },
-  {
-    slug: 'bathroom',
-    name: { en: 'Bathroom & Shower', fr: 'Salle de bain & Douche' },
-    tagline: {
-      en: 'Showers, water heaters, taps & sanitaryware',
-      fr: 'Douches, chauffe-eau, robinetterie & sanitaire',
-    },
-    description: {
-      en: 'Everything to fit out a bathroom — showers, water heaters, basins, taps and cabinets.',
-      fr: 'Tout pour équiper une salle de bain — douches, chauffe-eau, lavabos, robinetterie et meubles.',
-    },
-    cover: IMG('photo-1620626011761-996317b8d101'),
-    icon: 'bathroom',
-  },
-  {
-    slug: 'home-living',
-    name: { en: 'Home & Furniture', fr: 'Maison & Mobilier' },
-    tagline: {
-      en: 'Sofas, beds, tables & storage',
-      fr: 'Canapés, lits, tables & rangement',
-    },
-    description: {
-      en: 'Furnish every room — solid furniture delivered, and assembled wherever we can.',
-      fr: 'Meublez chaque pièce — du mobilier solide livré, et monté quand nous le pouvons.',
-    },
-    cover: IMG('photo-1586023492125-27b2c045efd7'),
-    icon: 'home',
+    cover: IMG('sac-ndop-1'),
+    icon: 'artisanat',
   },
   {
     slug: 'beaute',
-    name: { en: 'Beauty & Care', fr: 'Beauté & Soins' },
+    name: { en: 'Beauty & Wellness', fr: 'Beauté & Bien-être' },
     tagline: {
-      en: 'Hair care, soaps, oils & natural skincare',
-      fr: 'Soins capillaires, savons, huiles & soins naturels',
+      en: 'Shea butter, black soap, oils & natural care',
+      fr: 'Karité, savon noir, huiles & soins naturels',
     },
     description: {
-      en: 'Natural beauty and body care — artisanal hair products, African black soap, raw shea butter and pure oils.',
-      fr: 'Beauté naturelle et soins du corps — produits capillaires artisanaux, savon noir africain, beurre de karité brut et huiles pures.',
+      en: 'Natural African beauty — raw shea butter, traditional black soap, pure plant oils and artisanal hair and body care, made the way it always has been.',
+      fr: 'La beauté naturelle africaine — beurre de karité brut, savon noir traditionnel, huiles végétales pures et soins capillaires et corporels artisanaux, faits comme depuis toujours.',
     },
     cover: IMG('queen-rishma-creme-1'),
     icon: 'beaute',
+  },
+  {
+    slug: 'gastronomie',
+    name: { en: 'Food & Gastronomy', fr: 'Gastronomie' },
+    tagline: {
+      en: 'Spices, coffee, dried goods & local flavours',
+      fr: 'Épices, café, produits secs & saveurs locales',
+    },
+    description: {
+      en: 'African gastronomy — roasted coffee, local spices, dried foods and traditional condiments, sourced straight from the producers.',
+      fr: 'La gastronomie africaine — café torréfié, épices locales, produits secs et condiments traditionnels, sourcés directement chez les producteurs.',
+    },
+    cover: IMG('cafe-grains'),
+    icon: 'gastronomie',
+  },
+  {
+    slug: 'maison',
+    name: { en: 'Home & Decoration', fr: 'Maison & Décoration' },
+    tagline: {
+      en: 'Raffia, baskets, décor & event styling',
+      fr: 'Raphia, paniers, décor & décoration événementielle',
+    },
+    description: {
+      en: 'African home and decoration — woven raffia, baskets, decorative objects and complete event-styling sets to bring a space to life.',
+      fr: 'La maison et la décoration africaines — raphia tressé, paniers, objets décoratifs et ensembles de décoration événementielle complets pour faire vivre un espace.',
+    },
+    cover: IMG('decor-raphia-set'),
+    icon: 'maison',
+  },
+  {
+    slug: 'culture',
+    name: { en: 'Culture & Heritage', fr: 'Culture & Héritage' },
+    tagline: {
+      en: 'Ceremonial pieces, beadwork & cultural objects',
+      fr: 'Pièces de cérémonie, perles & objets culturels',
+    },
+    description: {
+      en: 'Culture and heritage — ceremonial outfits, beaded regalia and cultural pieces for weddings, dowries and traditional celebrations across Africa.',
+      fr: 'La culture et le patrimoine — tenues de cérémonie, parures perlées et pièces culturelles pour mariages, dots et célébrations traditionnelles à travers l’Afrique.',
+    },
+    cover: IMG('tenue-ceremonie-homme'),
+    icon: 'culture',
   },
 ];
 

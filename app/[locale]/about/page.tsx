@@ -68,7 +68,7 @@ export default async function AboutPage({
       <section className="mx-auto grid max-w-[1440px] items-center gap-10 px-4 py-12 md:grid-cols-2 md:px-8 md:py-16">
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-bone-deep">
           <Image
-            src="/products/photo-1556742049-0cfed4f6a45d.jpg"
+            src="/catalog/decor-evenementiel-1.jpg"
             alt=""
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

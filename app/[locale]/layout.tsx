@@ -52,8 +52,8 @@ export async function generateMetadata({
   const isFr = locale === 'fr';
 
   const title = isFr
-    ? 'AFRIMA — Électronique & maison, livré au Cameroun'
-    : 'AFRIMA — Electronics & home, delivered across Africa';
+    ? 'AFRIMA — La marketplace panafricaine de la culture authentique'
+    : 'AFRIMA — The pan-African marketplace for authentic culture';
   const description = isFr ? SITE.description.fr : SITE.description.en;
 
   return {
@@ -66,17 +66,20 @@ export async function generateMetadata({
     applicationName: 'AFRIMA',
     keywords: [
       'AFRIMA',
-      'électronique Cameroun',
-      'smartphone Cameroun',
-      'boutique en ligne Cameroun',
-      'électroménager Douala',
-      'ordinateur Yaoundé',
-      'livraison Afrique',
+      'marketplace africaine',
+      'textiles africains',
+      'pagne tissé',
+      'boubou traditionnel',
+      'artisanat africain',
+      'beauté naturelle africaine',
+      'beurre de karité',
+      'savon noir',
+      'made in Africa',
+      'livraison Afrique diaspora',
       'MTN MoMo',
       'Orange Money',
-      'prix de gros',
-      'online electronics store',
-      'home appliances Africa',
+      'African crafts marketplace',
+      'African fashion and textiles',
     ],
     authors: [{ name: 'Idriss Jordane', url: 'https://idrissjordane.dev' }],
     creator: 'Idriss Jordane',
